@@ -13,6 +13,7 @@
 		A5F508811EDF0619005D588A /* Recipe_Shopping.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5F5087F1EDF0619005D588A /* Recipe_Shopping.xcdatamodeld */; };
 		A5F508831EDF0619005D588A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F508821EDF0619005D588A /* Assets.xcassets */; };
 		A5F508861EDF0619005D588A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F508841EDF0619005D588A /* LaunchScreen.storyboard */; };
+		A5F5088E1EDF103B005D588A /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5088D1EDF103B005D588A /* MyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A5F508821EDF0619005D588A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5F508851EDF0619005D588A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5F508871EDF0619005D588A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F5088D1EDF103B005D588A /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				A5F508781EDF0619005D588A /* AppDelegate.swift */,
 				A5F5087A1EDF0619005D588A /* ViewController.swift */,
 				A5F5087C1EDF0619005D588A /* Main.storyboard */,
+				A5F5088D1EDF103B005D588A /* MyTableViewController.swift */,
 				A5F508821EDF0619005D588A /* Assets.xcassets */,
 				A5F508841EDF0619005D588A /* LaunchScreen.storyboard */,
 				A5F508871EDF0619005D588A /* Info.plist */,
@@ -143,6 +146,7 @@
 				A5F5087B1EDF0619005D588A /* ViewController.swift in Sources */,
 				A5F508811EDF0619005D588A /* Recipe_Shopping.xcdatamodeld in Sources */,
 				A5F508791EDF0619005D588A /* AppDelegate.swift in Sources */,
+				A5F5088E1EDF103B005D588A /* MyTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
