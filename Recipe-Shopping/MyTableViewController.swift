@@ -11,6 +11,11 @@ import UIKit
 class MyTableViewController: UITableViewController {
     
     var HeadTitle : String!
+    
+    var AppetizerName = ["Appetizer One", "Appetizer Two", "Appetizer Three"]
+    var AppetizerImage = [#imageLiteral(resourceName: "appetizers"), #imageLiteral(resourceName: "appetizers"), #imageLiteral(resourceName: "appetizers")]
+    var MaindishName = ["Main Dish One", "Main Dish Two"]
+    var MaindishImage = [#imageLiteral(resourceName: "maindish"),#imageLiteral(resourceName: "maindish")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,23 +38,40 @@ class MyTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var ItemCount : Int!
+        if self.HeadTitle == "Appetizers"{
+            ItemCount = AppetizerName.count
+        }
+        else if self.HeadTitle == "Main Dish"{
+            ItemCount = MaindishName.count
+        }
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return ItemCount
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cellIdentifier = "RecipeCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        if self.HeadTitle == "Appetizers"{
+            cell.textLabel?.text = AppetizerName[indexPath.row]
+            cell.imageView?.image = AppetizerImage[indexPath.row]
+        }
+        else if self.HeadTitle == "Main Dish"{
+            cell.textLabel?.text = MaindishName[indexPath.row]
+            cell.imageView?.image = MaindishImage[indexPath.row]
+        }
 
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
