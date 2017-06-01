@@ -15,6 +15,8 @@
 		A5F508861EDF0619005D588A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F508841EDF0619005D588A /* LaunchScreen.storyboard */; };
 		A5F5088E1EDF103B005D588A /* MyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5088D1EDF103B005D588A /* MyTableViewController.swift */; };
 		A5F508921EDF8B67005D588A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F508911EDF8B67005D588A /* DetailViewController.swift */; };
+		F7D4E6501EE0841F0077E6EE /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4E64F1EE0841F0077E6EE /* Ingredient.swift */; };
+		F7D4E6521EE085770077E6EE /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D4E6511EE085770077E6EE /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		A5F508871EDF0619005D588A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5F5088D1EDF103B005D588A /* MyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTableViewController.swift; sourceTree = "<group>"; };
 		A5F508911EDF8B67005D588A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F7D4E64F1EE0841F0077E6EE /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		F7D4E6511EE085770077E6EE /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 		A5F5086C1EDF0619005D588A = {
 			isa = PBXGroup;
 			children = (
+				F7D4E64F1EE0841F0077E6EE /* Ingredient.swift */,
+				F7D4E6511EE085770077E6EE /* Recipe.swift */,
 				A5F508771EDF0619005D588A /* Recipe-Shopping */,
 				A5F508761EDF0619005D588A /* Products */,
 			);
@@ -148,6 +154,8 @@
 			files = (
 				A5F5087B1EDF0619005D588A /* ViewController.swift in Sources */,
 				A5F508811EDF0619005D588A /* Recipe_Shopping.xcdatamodeld in Sources */,
+				F7D4E6521EE085770077E6EE /* Recipe.swift in Sources */,
+				F7D4E6501EE0841F0077E6EE /* Ingredient.swift in Sources */,
 				A5F508921EDF8B67005D588A /* DetailViewController.swift in Sources */,
 				A5F508791EDF0619005D588A /* AppDelegate.swift in Sources */,
 				A5F5088E1EDF103B005D588A /* MyTableViewController.swift in Sources */,

@@ -12,10 +12,42 @@ class MyTableViewController: UITableViewController {
     
     var HeadTitle : String!
     
+    var RecipeBook = [
+        Recipe(recType: "Appetizers", recName: "Bruchetta", recImage: #imageLiteral(resourceName: "appetizers"),
+    ingredients: [
+                Ingredient(ingrType: "Bread", name: "Baguette", amount: "1 lb", ingrImage: #imageLiteral(resourceName: "appetizers")),
+                Ingredient(ingrType: "Fish", name: "Smaked Salmon", amount: "1 lb", ingrImage: #imageLiteral(resourceName: "appetizers")),
+                Ingredient(ingrType: "Cheese", name: "Mozarella", amount: "1 lb", ingrImage: #imageLiteral(resourceName: "appetizers")),
+                Ingredient(ingrType: "Herb", name: "Chive", amount: "2 oz", ingrImage: #imageLiteral(resourceName: "appetizers"))]),
+        Recipe(recType: "Main Dish", recName: "Fried Chicken", recImage: #imageLiteral(resourceName: "maindish"),
+    ingredients: [
+                Ingredient(ingrType: "Meat", name: "Chicken", amount: "1 lb", ingrImage: #imageLiteral(resourceName: "maindish")),
+                Ingredient(ingrType: "Condiment", name: "Ketchup", amount: "50 oz", ingrImage: #imageLiteral(resourceName: "maindish")),
+                Ingredient(ingrType: "Condiment", name: "Ranch Sauce", amount: "50 oz", ingrImage: #imageLiteral(resourceName: "maindish")),
+                Ingredient(ingrType: "Vegetable", name: "Pototo", amount: "1 lb", ingrImage: #imageLiteral(resourceName: "maindish"))])
+    ]
+    
+    
+    //Returns number of recipes of certain type and is called in
+    //override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    func numberOfRecipes(recType: String) -> Int{
+        let totalRecipes = RecipeBook.count
+        var total = 0
+        for i in 0..<totalRecipes{
+            if RecipeBook[i].recType.lowercased() == recType.lowercased(){
+                total += 1
+            }
+        }
+        return total
+    }
+
+    
+    /*
     var AppetizerName = ["Appetizer One", "Appetizer Two", "Appetizer Three"]
     var AppetizerImage = [#imageLiteral(resourceName: "appetizers"), #imageLiteral(resourceName: "appetizers"), #imageLiteral(resourceName: "appetizers")]
     var MaindishName = ["Main Dish One", "Main Dish Two"]
     var MaindishImage = [#imageLiteral(resourceName: "maindish"),#imageLiteral(resourceName: "maindish")]
+ */
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +76,9 @@ class MyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         var ItemCount : Int!
         if self.HeadTitle == "Appetizers"{
-            ItemCount = AppetizerName.count
-        }
+            ItemCount = numberOfRecipes(recType: "Appetizers")        }
         else if self.HeadTitle == "Main Dish"{
-            ItemCount = MaindishName.count
+            ItemCount = numberOfRecipes(recType: "Main Dish")
         }
         // #warning Incomplete implementation, return the number of rows
         return ItemCount
@@ -58,13 +89,14 @@ class MyTableViewController: UITableViewController {
         
         let cellIdentifier = "RecipeCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
         if self.HeadTitle == "Appetizers"{
-            cell.textLabel?.text = AppetizerName[indexPath.row]
-            cell.imageView?.image = AppetizerImage[indexPath.row]
+            cell.textLabel?.text = RecipeBook[indexPath.row].recName
+            cell.imageView?.image = RecipeBook[indexPath.row].recImage
         }
         else if self.HeadTitle == "Main Dish"{
-            cell.textLabel?.text = MaindishName[indexPath.row]
-            cell.imageView?.image = MaindishImage[indexPath.row]
+            cell.textLabel?.text = RecipeBook[indexPath.row].recName
+            cell.imageView?.image = RecipeBook[indexPath.row].recImage
         }
 
         // Configure the cell...
