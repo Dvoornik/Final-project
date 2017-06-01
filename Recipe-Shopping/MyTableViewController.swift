@@ -12,7 +12,7 @@ class MyTableViewController: UITableViewController {
     
     var HeadTitle : String!
     
-    var AppetizerName = ["Appetizer One", "Appetizer Two", "Appetizer Three"]
+    var AppetizerName = ["Appetizer", "Appetizer Two", "Appetizer Three"]
     var AppetizerImage = [#imageLiteral(resourceName: "appetizers"), #imageLiteral(resourceName: "appetizers"), #imageLiteral(resourceName: "appetizers")]
     var MaindishName = ["Main Dish One", "Main Dish Two"]
     var MaindishImage = [#imageLiteral(resourceName: "maindish"),#imageLiteral(resourceName: "maindish")]
