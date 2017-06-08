@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51F9C9C1EE902EC00F15774 /* MyShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9C9B1EE902EC00F15774 /* MyShoppingListTableViewController.swift */; };
+		A51F9C9E1EE9106800F15774 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */; };
+		A51F9CA01EE910C100F15774 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9C9F1EE910C100F15774 /* AddRecipeViewController.swift */; };
 		A5F508791EDF0619005D588A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F508781EDF0619005D588A /* AppDelegate.swift */; };
 		A5F5087B1EDF0619005D588A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F5087A1EDF0619005D588A /* ViewController.swift */; };
 		A5F5087E1EDF0619005D588A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F5087C1EDF0619005D588A /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A51F9C9B1EE902EC00F15774 /* MyShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShoppingListTableViewController.swift; sourceTree = "<group>"; };
+		A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
+		A51F9C9F1EE910C100F15774 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		A5F508751EDF0619005D588A /* Recipe-Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-Shopping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F508781EDF0619005D588A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F5087A1EDF0619005D588A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 		A5F5086C1EDF0619005D588A = {
 			isa = PBXGroup;
 			children = (
+				A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */,
+				A51F9C9B1EE902EC00F15774 /* MyShoppingListTableViewController.swift */,
 				F7D4E64F1EE0841F0077E6EE /* Ingredient.swift */,
 				F7D4E6511EE085770077E6EE /* Recipe.swift */,
 				A5F508771EDF0619005D588A /* Recipe-Shopping */,
@@ -69,6 +77,7 @@
 				A5F508781EDF0619005D588A /* AppDelegate.swift */,
 				A5F5087A1EDF0619005D588A /* ViewController.swift */,
 				A5F5087C1EDF0619005D588A /* Main.storyboard */,
+				A51F9C9F1EE910C100F15774 /* AddRecipeViewController.swift */,
 				A5F508911EDF8B67005D588A /* DetailViewController.swift */,
 				A5F5088D1EDF103B005D588A /* MyTableViewController.swift */,
 				A5F508821EDF0619005D588A /* Assets.xcassets */,
@@ -153,8 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5F5087B1EDF0619005D588A /* ViewController.swift in Sources */,
+				A51F9C9E1EE9106800F15774 /* IngredientsTableViewController.swift in Sources */,
+				A51F9CA01EE910C100F15774 /* AddRecipeViewController.swift in Sources */,
 				A5F508811EDF0619005D588A /* Recipe_Shopping.xcdatamodeld in Sources */,
 				F7D4E6521EE085770077E6EE /* Recipe.swift in Sources */,
+				A51F9C9C1EE902EC00F15774 /* MyShoppingListTableViewController.swift in Sources */,
 				F7D4E6501EE0841F0077E6EE /* Ingredient.swift in Sources */,
 				A5F508921EDF8B67005D588A /* DetailViewController.swift in Sources */,
 				A5F508791EDF0619005D588A /* AppDelegate.swift in Sources */,
