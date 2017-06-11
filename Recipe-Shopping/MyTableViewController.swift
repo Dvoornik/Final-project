@@ -42,6 +42,8 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         
         super.viewDidLoad()
         
+        ReadData()
+        
         //addData()
         
 
@@ -52,6 +54,28 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.title = self.HeadTitle
+        
+        let fetchRequest : NSFetchRequest<DishDO> = DishDO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "iName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultsController.delegate = self
+            
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
+                    MyDish = fetchedObjects
+                }
+            }
+            catch {
+                print(error)
+            }
+            
+        }
+
         
         /*let fetchRequest : NSFetchRequest<DishDO> = DishDO.fetchRequest()
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
@@ -89,6 +113,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
             if let indexPath = indexPath {
                 tableView.reloadRows(at: [indexPath], with: .fade)
             }
+            
             default:
             tableView.reloadData()
         }
@@ -206,6 +231,20 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     */
     
+    func ReadData(){
+    
+    if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+        let request: NSFetchRequest<DishDO> = DishDO.fetchRequest()
+        let context = appDelegate.persistentContainer.viewContext
+        do {
+            MyDish = try context.fetch(request)
+        } catch {
+            print(error)
+        }
+        print(MyDish.count)
+    }
+    }
+
     
     /*func addData() {
         
