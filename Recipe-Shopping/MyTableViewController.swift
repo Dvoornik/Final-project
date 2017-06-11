@@ -39,9 +39,11 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
     ]*/
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
-        addData()
+        //addData()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -51,7 +53,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         
         self.navigationItem.title = self.HeadTitle
         
-        let fetchRequest : NSFetchRequest<DishDO> = DishDO.fetchRequest()
+        /*let fetchRequest : NSFetchRequest<DishDO> = DishDO.fetchRequest()
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -67,7 +69,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
                 catch {
                     print(error)
                 }
-            }
+            }*/
         }
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
@@ -114,7 +116,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        var ItemCount : Int!
+        /*var ItemCount : Int!
         var Item : DishDO
         Item = MyDish[section]
         if self.HeadTitle == Item.iType {
@@ -126,8 +128,9 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         else {
             ItemCount = 1
         }
-        // #warning Incomplete implementation, return the number of rows
-        return ItemCount
+        // #warning Incomplete implementation, return the number of rows*/
+        
+        return MyDish.count
     }
 
     
@@ -138,7 +141,10 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         var cellItem : DishDO
         cellItem = MyDish[indexPath.row]
         
-        if self.HeadTitle == cellItem.iType
+        cell.textLabel?.text = cellItem.iName
+        cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
+        
+        /*if self.HeadTitle == cellItem.iType
         {
             cell.textLabel?.text = cellItem.iName
             cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
@@ -147,7 +153,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         {
             cell.textLabel?.text = cellItem.iName
             cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
-        }
+        }*/
 
         // Configure the cell...
 
@@ -200,22 +206,23 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
     }
     */
     
-    func addData() {
+    
+    /*func addData() {
         
-        var addItem : DishDO
+        var newItem: DishDO
     
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
             
-            for i in 0...type.count - 1 {
+            for i in 0...dishes.count - 1 {
                 
-                addItem = DishDO(context: appDelegate.persistentContainer.viewContext)
-                addItem.iName = dishes[i]
-                addItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: image[i])!)!)
-                addItem.iType = type[i]
+                newItem = DishDO(context: appDelegate.persistentContainer.viewContext)
+                newItem.iName = dishes[i]
+                newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: image[i])!)!)
+                newItem.iType = type[i]
                 appDelegate.saveContext()
             }
         }
-    }
+    }*/
 
 
 
