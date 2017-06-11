@@ -76,25 +76,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
             
         }
 
-        
-        /*let fetchRequest : NSFetchRequest<DishDO> = DishDO.fetchRequest()
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-            let context = appDelegate.persistentContainer.viewContext
-            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultsController.delegate = self
-            
-            do {
-                try fetchResultsController.performFetch()
-                if let fetchedObjects = fetchResultsController.fetchedObjects {
-                    MyDish = fetchedObjects
-            
-                }
-            }
-                catch {
-                    print(error)
-                }
-            }*/
-        }
+    }
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
@@ -141,21 +123,27 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        /*var ItemCount : Int!
-        var Item : DishDO
-        Item = MyDish[section]
-        if self.HeadTitle == Item.iType {
-            ItemCount = MyDish.count
+        var item :DishDO
+        var count = 0
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let request: NSFetchRequest<DishDO> = DishDO.fetchRequest()
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                MyDish = try context.fetch(request)
+            } catch {
+                print(error)
+            }
+            if MyDish.count > 0 {
+            for i in 0...MyDish.count - 1 {
+                item = MyDish[i]
+                if item.iType == self.navigationItem.title {
+                    count = count + 1
+                }
+              }
+            }
         }
-        else if self.HeadTitle == Item.iType{
-            ItemCount = MyDish.count
-        }
-        else {
-            ItemCount = 1
-        }
-        // #warning Incomplete implementation, return the number of rows*/
         
-        return MyDish.count
+        return count
     }
 
     
@@ -166,19 +154,21 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         var cellItem : DishDO
         cellItem = MyDish[indexPath.row]
         
-        cell.textLabel?.text = cellItem.iName
-        cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
+        //cell.textLabel?.text = cellItem.iName
+        //cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
         
-        /*if self.HeadTitle == cellItem.iType
+        if cellItem.iType == "Appetizers"
         {
             cell.textLabel?.text = cellItem.iName
             cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
+            print(String(describing: cellItem.iType))
         }
-        else if self.HeadTitle == cellItem.iType
+        else
         {
             cell.textLabel?.text = cellItem.iName
             cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
-        }*/
+            print(cellItem.iType)
+        }
 
         // Configure the cell...
 
