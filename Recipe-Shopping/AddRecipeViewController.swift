@@ -12,7 +12,7 @@ import CoreData
 class AddRecipeViewController: UIViewController
 {
     // Declared Variables //
-    @IBOutlet weak var RType: UITextField!
+    
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var Image: UITextField!
     @IBOutlet weak var previewImage: UIImageView!
@@ -21,6 +21,7 @@ class AddRecipeViewController: UIViewController
     
     // Declared Variables //
     var newItem : DishDO!
+    var TypeOfRecipe : String!
     
     override func viewDidLoad()
     {
@@ -64,7 +65,7 @@ class AddRecipeViewController: UIViewController
         {
             newItem = DishDO(context: appDelegate.persistentContainer.viewContext)
             
-            newItem.iType = RType.text!
+            newItem.iType = self.TypeOfRecipe
             // Crashes if the image name does not exist in the app so this checks for that.
             if(previewImageError.isHidden == false)
             {
