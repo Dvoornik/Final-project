@@ -8,17 +8,18 @@
 
 import UIKit
 
-class Ingredient: NSObject {
+class Ingredient: NSObject
+{
     var ingrType = ""
     var name = ""
     var ingrImage = UIImage(named: "")
     var amount = ""
 
-
-    init(ingrType: String, name: String, amount: String, ingrImage: UIImage){
-    self.ingrType = ingrType
-    self.name = name
-    self.ingrImage = ingrImage
-    self.amount = amount
+    init(ingrType: String, name: String, amount: String, ingrImage: UIImage)
+    {
+        self.ingrType = ingrType
+        self.name = name
+        self.ingrImage = ingrImage
+        self.amount = amount
     }
 }
