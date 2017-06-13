@@ -19,6 +19,11 @@ class IngredientsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    @IBAction func Cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func Save(_ sender: Any) {
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
