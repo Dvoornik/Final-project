@@ -16,9 +16,9 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
     var MyDish : [DishDO] = []
     var fetchResultsController : NSFetchedResultsController<DishDO>!
     
-    var dishes = ["Bruchetta","Fried Chicken"]
+    /*var dishes = ["Bruchetta","Fried Chicken"]
     var type = ["Appetizers","Main Dish"]
-    var image = ["appetizers","maindish"]
+    var image = ["appetizers","maindish"]*/
     
     /*var AppetizersRecipeBook = [
         Recipe(recType: "Appetizers", recName: "Bruchetta", recImage: #imageLiteral(resourceName: "appetizers"),
@@ -38,83 +38,82 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
                 Ingredient(ingrType: "Vegetable", name: "Potato", amount: "1 lb", ingrImage: #imageLiteral(resourceName: "maindish"))])
     ]*/
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidLoad()
-    {
+
+    override func viewDidLoad() {
+        
         super.viewDidLoad()
-        ReadData()
-        //addData()
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         self.navigationItem.title = self.HeadTitle
         
         let fetchRequest : NSFetchRequest<DishDO> = DishDO.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "iName", ascending: true)
+        fetchRequest.predicate = NSPredicate(format: "iType == %@", self.HeadTitle)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
-        {
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             let context = appDelegate.persistentContainer.viewContext
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultsController.delegate = self
-            do
-            {
+            
+            do {
                 try fetchResultsController.performFetch()
-                if let fetchedObjects = fetchResultsController.fetchedObjects
-                {
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
                     MyDish = fetchedObjects
                 }
             }
-            catch { print(error) }
+            catch {
+                print(error)
+            }
+            
         }
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
     
-    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
-    {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
     
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?)
-    {
-        switch type
-        {
-            case .insert:
-                if let newIndexPath = newIndexPath
-                {
-                    tableView.insertRows(at: [newIndexPath], with: .fade)
-                }
-            case .delete:
-                if let indexPath = indexPath
-                {
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                }
-            case .update:
-                if let indexPath = indexPath
-                {
-                    tableView.reloadRows(at: [indexPath], with: .fade)
-                }
-            default:
-                tableView.reloadData()
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?){
+        switch type {
+        case .insert:
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .fade)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                tableView.reloadRows(at: [indexPath], with: .fade)
+            }
+            
+        default:
+            tableView.reloadData()
         }
         
-        if let fetchedObjects = controller.fetchedObjects
-        {
+        if let fetchedObjects = controller.fetchedObjects {
             MyDish = fetchedObjects as! [DishDO]
         }
     }
     
-    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>)
-    {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
 
@@ -129,34 +128,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        /*
-        var item : DishDO
-        var count = 0
-        
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
-        {
-            let request: NSFetchRequest<DishDO> = DishDO.fetchRequest()
-            let context = appDelegate.persistentContainer.viewContext
-            do
-            {
-                MyDish = try context.fetch(request)
-            } catch { print(error) }
-            
-            if MyDish.count > 0
-            {
-                for i in 0...MyDish.count - 1
-                {
-                    item = MyDish[i]
-                    if item.iType == self.navigationItem.title
-                    {
-                        count = count + 1
-                    }
-                }
-            }
-        }
-        return count
-        */
-        return MyDish.count
+                return MyDish.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -171,43 +143,14 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         
         //cell.textLabel?.text = cellItem.iName
         //cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
-        if cellItem.iType == "Appetizers"
-        {
-            //cell.textLabel?.text = cellItem.iName
-            //cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
+        
             cell.cellRecipeName?.text = cellItem.iName
             cell.cellRecipeType?.text = cellItem.iType
             cell.cellRecipeImage?.image = UIImage(data: cellItem.iImage as! Data)
-            print(String(describing: cellItem.iType))
-        }
-        else
-        {
-            //cell.textLabel?.text = cellItem.iName
-            //cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
-            cell.cellRecipeName?.text = cellItem.iName
-            cell.cellRecipeType?.text = cellItem.iType
-            cell.cellRecipeImage?.image = UIImage(data: cellItem.iImage as! Data)
-            //print(cellItem.iType)
-            print(String(describing: cellItem.iType))
-        }
-
+        
         return cell
     }
     
-    func ReadData()
-    {
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
-        {
-            let request: NSFetchRequest<DishDO> = DishDO.fetchRequest()
-            let context = appDelegate.persistentContainer.viewContext
-            do
-            {
-                MyDish = try context.fetch(request)
-            } catch { print(error) }
-            print(MyDish.count)
-        }
-    }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -252,23 +195,5 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         // Pass the selected object to the new view controller.
     }
     */
-    
-    
-    /*func addData() {
-        
-        var newItem: DishDO
-    
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
-            
-            for i in 0...dishes.count - 1 {
-                
-                newItem = DishDO(context: appDelegate.persistentContainer.viewContext)
-                newItem.iName = dishes[i]
-                newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: image[i])!)!)
-                newItem.iType = type[i]
-                appDelegate.saveContext()
-            }
-        }
-    }*/
 
 }
