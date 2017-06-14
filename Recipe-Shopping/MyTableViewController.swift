@@ -9,12 +9,15 @@
 import UIKit
 import CoreData
 
-class MyTableViewController: UITableViewController, NSFetchedResultsControllerDelegate
+class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSFetchedResultsControllerDelegate
 {
     // Declared Variables //
     var HeadTitle : String!
     var MyDish : [DishDO] = []
     var fetchResultsController : NSFetchedResultsController<DishDO>!
+    
+    var searchController: UISearchController!
+    var searchResults : [DishDO] = []
     
     /*var dishes = ["Bruchetta","Fried Chicken"]
     var type = ["Appetizers","Main Dish"]
@@ -74,6 +77,14 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
             
         }
         
+        //Add a searchController and searchBar to the app
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchBar.sizeToFit()
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         
@@ -128,7 +139,12 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-                return MyDish.count
+        if searchController.isActive{
+            return searchResults.count
+        }
+        else{
+            return MyDish.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -137,7 +153,12 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeTableViewCell
         
         var cellItem : DishDO
-        cellItem = MyDish[indexPath.row]
+        if searchController.isActive{
+            cellItem = searchResults[indexPath.row]
+        }
+        else{
+            cellItem = MyDish[indexPath.row]
+        }
         
         // Configure the cell...
         
@@ -151,13 +172,18 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         return cell
     }
     
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if searchController.isActive{
+            return false
+        }
+        else{
+            return true
+        }
     }
-    */
+    
 
     
     // Override to support editing the table view.
@@ -207,7 +233,7 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         else if segue.identifier == "DetailViewRecipe" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let detailVC = segue.destination as! DetailViewController
-                detailVC.recipeDetail = MyDish[indexPath.row]
+                detailVC.recipeDetail = searchController.isActive ? searchResults[indexPath.row] : MyDish[indexPath.row]
             }
         }
 
@@ -215,5 +241,17 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         // Pass the selected object to the new view controller.
     }
     
-
+    func filterContentForSearchText(searchText: String) {
+        searchResults = MyDish.filter({(ToDoItem: DishDO) -> Bool in
+            let nameMatch = ToDoItem.iName?.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+            return nameMatch != nil
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController){
+        if let textToSearch = searchController.searchBar.text{
+            filterContentForSearchText(searchText: textToSearch)
+            tableView.reloadData()
+        }
+    }
 }
