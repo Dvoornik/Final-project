@@ -19,6 +19,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
     var searchController: UISearchController!
     var searchResults : [DishDO] = []
     
+    
     /*var dishes = ["Bruchetta","Fried Chicken"]
     var type = ["Appetizers","Main Dish"]
     var image = ["appetizers","maindish"]*/
@@ -85,9 +86,39 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         self.searchController.dimsBackgroundDuringPresentation = false
         self.tableView.tableHeaderView = self.searchController.searchBar
         
+        //Make 'Cancel' button in search bar white
+        (UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])).tintColor = UIColor.white
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        //Add background view to the table view
+        let backgroundImage : UIImage = UIImage(named: "tablesample.png")!
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        //Gets rid of empty extra cells at the end of TV
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        //fill teh view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
+        imageView.contentMode = .scaleAspectFill
+        
+        //Blur effect
+        /*
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = imageView.bounds
+        imageView.addSubview(blurView)
+        */
+    }
+    
+    //Method to make table view cells transparent
+    func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        //casting
+        let myCell = cell as! RecipeTableViewCell
+        //set cell's color to a partly transparent color
+        myCell.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -171,7 +202,6 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         
         return cell
     }
-    
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
