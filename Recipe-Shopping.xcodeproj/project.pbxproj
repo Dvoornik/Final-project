@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18381EDE1EEF89CD0024937D /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18381EDD1EEF89CD0024937D /* RecipeTableViewCell.swift */; };
+		5A2DF3B21EF11D450022C258 /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2DF3B11EF11D450022C258 /* IngredientTableViewCell.swift */; };
 		A51F9C9C1EE902EC00F15774 /* MyShoppingListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9C9B1EE902EC00F15774 /* MyShoppingListTableViewController.swift */; };
 		A51F9C9E1EE9106800F15774 /* IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */; };
 		A51F9CA01EE910C100F15774 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51F9C9F1EE910C100F15774 /* AddRecipeViewController.swift */; };
@@ -25,8 +26,9 @@
 
 /* Begin PBXFileReference section */
 		18381EDD1EEF89CD0024937D /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
+		5A2DF3B11EF11D450022C258 /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		A51F9C9B1EE902EC00F15774 /* MyShoppingListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyShoppingListTableViewController.swift; sourceTree = "<group>"; };
-		A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewController.swift; sourceTree = "<group>"; };
+		A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsTableViewController.swift; path = ../IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		A51F9C9F1EE910C100F15774 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		A5F508751EDF0619005D588A /* Recipe-Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe-Shopping.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F508781EDF0619005D588A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +58,6 @@
 		A5F5086C1EDF0619005D588A = {
 			isa = PBXGroup;
 			children = (
-				A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */,
 				A51F9C9B1EE902EC00F15774 /* MyShoppingListTableViewController.swift */,
 				F7D4E64F1EE0841F0077E6EE /* Ingredient.swift */,
 				F7D4E6511EE085770077E6EE /* Recipe.swift */,
@@ -76,10 +77,12 @@
 		A5F508771EDF0619005D588A /* Recipe-Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */,
 				A5F508781EDF0619005D588A /* AppDelegate.swift */,
 				A5F5087A1EDF0619005D588A /* ViewController.swift */,
 				A5F5087C1EDF0619005D588A /* Main.storyboard */,
 				18381EDD1EEF89CD0024937D /* RecipeTableViewCell.swift */,
+				5A2DF3B11EF11D450022C258 /* IngredientTableViewCell.swift */,
 				A51F9C9F1EE910C100F15774 /* AddRecipeViewController.swift */,
 				A5F508911EDF8B67005D588A /* DetailViewController.swift */,
 				A5F5088D1EDF103B005D588A /* MyTableViewController.swift */,
@@ -172,6 +175,7 @@
 				F7D4E6521EE085770077E6EE /* Recipe.swift in Sources */,
 				A51F9C9C1EE902EC00F15774 /* MyShoppingListTableViewController.swift in Sources */,
 				F7D4E6501EE0841F0077E6EE /* Ingredient.swift in Sources */,
+				5A2DF3B21EF11D450022C258 /* IngredientTableViewCell.swift in Sources */,
 				A5F508921EDF8B67005D588A /* DetailViewController.swift in Sources */,
 				A5F508791EDF0619005D588A /* AppDelegate.swift in Sources */,
 				A5F5088E1EDF103B005D588A /* MyTableViewController.swift in Sources */,
