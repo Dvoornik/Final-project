@@ -96,5 +96,35 @@ class IngredientsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func AddIngredient(_ sender: Any) {
+        let clickAddIngedient = UIAlertController(title: "New Ingredient", message: "Add New Ingredient", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let saveAction = UIAlertAction(title: "Save",
+                                       style: .default) { (action: UIAlertAction!) -> Void in
+                                        
+                                        //let textField = clickAddIngedient.textFields!
+                                        
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default) { (action: UIAlertAction!) -> Void in
+        }
+        
+        clickAddIngedient.addTextField {
+            (textField: UITextField!) -> Void in
+        }
+        
+        clickAddIngedient.addAction(saveAction)
+        clickAddIngedient.addAction(cancelAction)
+        
+        self.present(clickAddIngedient,
+                              animated: true,
+                              completion: nil)
+    }
+        
+        
+    }
 
-}
+
