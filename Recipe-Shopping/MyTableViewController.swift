@@ -203,6 +203,13 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
             let detailVC = segue.destination as! AddRecipeViewController
             detailVC.TypeOfRecipe = self.HeadTitle
         }
+        
+        else if segue.identifier == "DetailViewRecipe" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let detailVC = segue.destination as! DetailViewController
+                detailVC.recipeDetail = MyDish[indexPath.row]
+            }
+        }
 
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
