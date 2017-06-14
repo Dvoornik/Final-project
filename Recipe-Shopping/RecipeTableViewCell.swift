@@ -12,9 +12,7 @@ class RecipeTableViewCell: UITableViewCell
 {
     // Declared Outlets //
     @IBOutlet weak var cellRecipeName: UILabel!
-    
     @IBOutlet weak var cellRecipeType: UILabel!
-    
     @IBOutlet weak var cellRecipeImage: UIImageView!
     
     override func awakeFromNib()

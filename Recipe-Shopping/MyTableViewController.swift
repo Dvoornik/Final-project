@@ -9,12 +9,16 @@
 import UIKit
 import CoreData
 
-class MyTableViewController: UITableViewController, NSFetchedResultsControllerDelegate
+class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSFetchedResultsControllerDelegate
 {
     // Declared Variables //
     var HeadTitle : String!
     var MyDish : [DishDO] = []
     var fetchResultsController : NSFetchedResultsController<DishDO>!
+    
+    var searchController: UISearchController!
+    var searchResults : [DishDO] = []
+    
     
     /*var dishes = ["Bruchetta","Fried Chicken"]
     var type = ["Appetizers","Main Dish"]
@@ -74,9 +78,47 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
             
         }
         
+        //Add a searchController and searchBar to the app
+        self.searchController = UISearchController(searchResultsController: nil)
+        self.searchController.searchBar.sizeToFit()
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchResultsUpdater = self
+        self.searchController.dimsBackgroundDuringPresentation = false
+        self.tableView.tableHeaderView = self.searchController.searchBar
+        
+        //Make 'Cancel' button in search bar white
+        (UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])).tintColor = UIColor.white
+        
     }
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        //Add background view to the table view
+        let backgroundImage : UIImage = UIImage(named: "tablesample.png")!
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        //Gets rid of empty extra cells at the end of TV
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        //fill teh view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
+        imageView.contentMode = .scaleAspectFill
+        
+        //Blur effect
+        /*
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.frame = imageView.bounds
+        imageView.addSubview(blurView)
+        */
+    }
+    
+    //Method to make table view cells transparent
+    func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        //casting
+        let myCell = cell as! RecipeTableViewCell
+        //set cell's color to a partly transparent color
+        myCell.backgroundColor = UIColor(white: 1, alpha: 0.5)
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
@@ -128,7 +170,12 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-                return MyDish.count
+        if searchController.isActive{
+            return searchResults.count
+        }
+        else{
+            return MyDish.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -137,7 +184,12 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RecipeTableViewCell
         
         var cellItem : DishDO
-        cellItem = MyDish[indexPath.row]
+        if searchController.isActive{
+            cellItem = searchResults[indexPath.row]
+        }
+        else{
+            cellItem = MyDish[indexPath.row]
+        }
         
         // Configure the cell...
         
@@ -151,13 +203,17 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
         return cell
     }
     
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        if searchController.isActive{
+            return false
+        }
+        else{
+            return true
+        }
     }
-    */
+    
 
     
     // Override to support editing the table view.
@@ -203,10 +259,29 @@ class MyTableViewController: UITableViewController, NSFetchedResultsControllerDe
             let detailVC = segue.destination as! AddRecipeViewController
             detailVC.TypeOfRecipe = self.HeadTitle
         }
+        
+        else if segue.identifier == "DetailViewRecipe" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let detailVC = segue.destination as! DetailViewController
+                detailVC.recipeDetail = searchController.isActive ? searchResults[indexPath.row] : MyDish[indexPath.row]
+            }
+        }
 
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     
-
+    func filterContentForSearchText(searchText: String) {
+        searchResults = MyDish.filter({(ToDoItem: DishDO) -> Bool in
+            let nameMatch = ToDoItem.iName?.range(of: searchText, options: String.CompareOptions.caseInsensitive)
+            return nameMatch != nil
+        })
+    }
+    
+    func updateSearchResults(for searchController: UISearchController){
+        if let textToSearch = searchController.searchBar.text{
+            filterContentForSearchText(searchText: textToSearch)
+            tableView.reloadData()
+        }
+    }
 }
