@@ -1,0 +1,28 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A32C12AC800152F45F385B1D2C36BE2DE2C1888A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A32C12AC800152F45F385B1D2C36BE2DE2C1888A" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "492AEBB7-A1F7-4BF6-AE17-E11114A8F501",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A32C12AC800152F45F385B1D2C36BE2DE2C1888A" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Recipe-Shopping",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Recipe-Shopping.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Dvoornik\/Final-project.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A32C12AC800152F45F385B1D2C36BE2DE2C1888A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Dvoornik\/Final-project.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A32C12AC800152F45F385B1D2C36BE2DE2C1888A"
+    }
+  ]
+}
