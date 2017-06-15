@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOR-Cd-Gem" id="vkS-1F-TcX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -63,14 +63,13 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrC-N1-NA3" id="Yss-b9-i5T">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaH-xP-DUe">
                                             <rect key="frame" x="13" y="0.0" width="186" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
@@ -88,19 +87,19 @@ CQkJA
                     <toolbarItems>
                         <barButtonItem systemItem="add" id="88a-kO-EeF">
                             <connections>
-                                <action selector="AddIngredient:" destination="QAf-O9-Y9M" id="Ta0-xi-YUc"/>
+                                <action selector="Addbtn:" destination="QAf-O9-Y9M" id="fxc-bM-3hD"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="P6I-eu-ZvS">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="16B-Rb-aeO">
                             <connections>
-                                <action selector="Cancel:" destination="QAf-O9-Y9M" id="bdD-CT-db8"/>
+                                <action selector="cancelbtn:" destination="QAf-O9-Y9M" id="ovp-eB-NaN"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fZd-4l-7yW">
                             <connections>
-                                <action selector="Save:" destination="QAf-O9-Y9M" id="8cv-OV-PiL"/>
+                                <action selector="AddIngredientbtn:" destination="QAf-O9-Y9M" id="fY4-f2-ID0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -285,7 +284,7 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yh-e2-NUU" id="g0g-Dg-uPh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-oq-awf">
