@@ -82,14 +82,24 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         self.searchController = UISearchController(searchResultsController: nil)
         self.searchController.searchBar.sizeToFit()
         self.searchController.hidesNavigationBarDuringPresentation = false
+        
+        //Next line fixes the bug to ensure that the search bar does not remain on the screen when
+        //user navigates to different controller and the searchController is still active
+        definesPresentationContext = true
+        
+        //Set search bar's background to match the rest of the view
+        self.searchController.searchBar.backgroundImage = UIImage(named: "tablesample.png")
         self.searchController.searchResultsUpdater = self
         self.searchController.dimsBackgroundDuringPresentation = false
         self.tableView.tableHeaderView = self.searchController.searchBar
         
+        //Hide search bar from view until explicitly pulled down
+        self.tableView.contentOffset = CGPoint(x: 0, y: 44)
+        
         //Make 'Cancel' button in search bar white
         (UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])).tintColor = UIColor.white
-        
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -101,7 +111,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         //Gets rid of empty extra cells at the end of TV
         tableView.tableFooterView = UIView(frame: .zero)
         
-        //fill teh view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
+        //fill the view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
         imageView.contentMode = .scaleAspectFill
         
         //Blur effect
@@ -253,6 +263,9 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        //hide search bar when transitioning between controllers
+        self.tableView.contentOffset = CGPoint(x: 0, y: 44)
         
         if segue.identifier == "AddRecipe"{
             
