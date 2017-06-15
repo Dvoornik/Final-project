@@ -9,24 +9,27 @@
 import UIKit
 import CoreData
 
-class AddRecipeViewController: UIViewController
+class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource
 {
-    // Declared Variables //
-    
+    //////////// Declared Outlets ////////////
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var Image: UITextField!
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var previewImageError: UILabel!
+    @IBOutlet weak var autocompleteTableView: UITableView!
     
-    
-    // Declared Variables //
+    //////////// Declared Variables ////////////
     var newItem : DishDO!
     var TypeOfRecipe : String!
+    var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icreamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
+    var autocompleteResults : [String] = []
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        Image.delegate = self
+        autocompleteTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning()
@@ -37,7 +40,7 @@ class AddRecipeViewController: UIViewController
     
     @IBAction func Preview(_ sender: Any)
     {
-        // Unhides the error message if the user inputed a image name that is not found in our Assets. Sets a placeholder image instead.
+        // Unhides the error message if the user inputed a image name that is not found in our Assets. Sets a placeholder image instead. -S.T.
         if(previewImageError.isHidden == false)
         {
             previewImageError.isHidden = true
@@ -52,7 +55,6 @@ class AddRecipeViewController: UIViewController
             previewImageError.isHidden = false
         }
     }
-    
     
     @IBAction func Cancel(_ sender: Any)
     {
@@ -90,7 +92,50 @@ class AddRecipeViewController: UIViewController
         }
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    /////////////////////////////////////////////////////
+    //////////// Autocomplete Tableview code ////////////
+    /////////////////////////////////////////////////////
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return autocompleteResults.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "autocompleteCell", for: indexPath) as UITableViewCell
+        // Cells will repopulate with the autocompletion results as you type in the Image textfield.
+        cell.textLabel!.text = autocompleteResults[indexPath.row]
+        return cell
+    }
+    // Takes the string in the Image textfield and finds any matching string in the autocomplete array. -S.T.
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
+        let substring = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        searchAutocompleteEntriesWithSubstring(substring)
+        return true
+    }
+    // Finds any matching string in the array and returns that to the tableview.
+    func searchAutocompleteEntriesWithSubstring(_ substring: String)
+    {
+        autocompleteResults.removeAll(keepingCapacity: false)
+        for key in autocompleteList
+        {
+            let myString : NSString! = key as NSString
+            let substringRange : NSRange! = myString.range(of: substring)
+            if (substringRange.location  == 0)
+            {
+                autocompleteResults.append(key)
+            }
+        }
+        autocompleteTableView.reloadData()
+    }
+    // This allows autocompletion to happen by clicking on a cell. Will replace/autocomplete the Image textfield with the cell's text.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let selectedCell: UITableViewCell = tableView.cellForRow(at: indexPath)!
+        Image.text = selectedCell.textLabel!.text!
+    }
     
     /*
     // MARK: - Navigation
