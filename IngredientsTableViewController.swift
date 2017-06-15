@@ -752,7 +752,8 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
                 
                 
             }
-            
+        }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action: UIAlertAction!) -> Void in
             }
             
@@ -760,7 +761,7 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
             (textField: UITextField!) -> Void in
             }
             
-        //clickAddIngedient.addAction(saveAction)
+        clickAddIngedient.addAction(saveAction)
         clickAddIngedient.addAction(cancelAction)
             
         self.present(clickAddIngedient, animated: true, completion: nil)
@@ -814,4 +815,4 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
     
     
 }
-}
+
