@@ -52,6 +52,18 @@ class ViewController: UIViewController {
             let detailVC = segue.destination as! MyShoppingListTableViewController
             detailVC.HeadTitle = "Shopping List"
         }
+        else if segue.identifier == "Desserts"{
+            let detailVC = segue.destination as! MyTableViewController
+            detailVC.HeadTitle = "Desserts"
+        }
+        else if segue.identifier == "Salads"{
+            let detailVC = segue.destination as! MyTableViewController
+            detailVC.HeadTitle = "Salads"
+        }
+        else if (segue.identifier == "Drinks"){
+            let detailVC = segue.destination as! MyTableViewController
+            detailVC.HeadTitle = "Drinks"
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

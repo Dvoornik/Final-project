@@ -79,6 +79,7 @@
 		A5F508771EDF0619005D588A /* Recipe-Shopping */ = {
 			isa = PBXGroup;
 			children = (
+				A51F9C9D1EE9106800F15774 /* IngredientsTableViewController.swift */,
 				A5F508781EDF0619005D588A /* AppDelegate.swift */,
 				A5F5087A1EDF0619005D588A /* ViewController.swift */,
 				A5F5087C1EDF0619005D588A /* Main.storyboard */,

@@ -7,19 +7,33 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var RecipeName: UILabel!
+    @IBOutlet weak var RecipeImage: UIImageView!
+    @IBOutlet weak var RecipeDescription: UITextView!
+    
+    var recipeDetail : DishDO!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.RecipeName.text = self.recipeDetail.iName
+        self.RecipeImage.image = UIImage(data: self.recipeDetail.iImage as! Data)
+        self.RecipeDescription.text = self.recipeDetail.iDescription
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
     
 
     /*
