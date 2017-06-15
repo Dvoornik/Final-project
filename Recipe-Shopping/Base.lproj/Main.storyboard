@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -101,7 +101,6 @@ CQkJA
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fZd-4l-7yW">
                             <connections>
                                 <action selector="Save:" destination="QAf-O9-Y9M" id="8cv-OV-PiL"/>
-                                <segue destination="ibW-Ss-cd8" kind="presentation" id="ZnS-I3-Xk7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -110,43 +109,6 @@ CQkJA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6t-z4-q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2508" y="-708.39580209895053"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="24m-hR-jyG">
-            <objects>
-                <viewController id="ibW-Ss-cd8" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="RV3-Ka-qQF"/>
-                        <viewControllerLayoutGuide type="bottom" id="x7J-Ph-EmA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QK1-AM-LIb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="reC-jd-rWm">
-                                <rect key="frame" x="61" y="214" width="233" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVr-wT-WuR">
-                                <rect key="frame" x="210" y="264" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="save"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c67-Mk-wcZ">
-                                <rect key="frame" x="73" y="264" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="cancel"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LY4-66-A06" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3277.5999999999999" y="-708.39580209895053"/>
         </scene>
         <!--Add Recipe View Controller-->
         <scene sceneID="sp5-DT-CvS">
@@ -224,86 +186,6 @@ CQkJA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="379-EC-1pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2508" y="112"/>
-        </scene>
-        <!--Add Ingredient View Controller-->
-        <scene sceneID="eae-bt-QMC">
-            <objects>
-                <viewController id="uxB-gm-Ic7" customClass="AddIngredientViewController" customModule="Recipe_Shopping" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mON-CW-fWz"/>
-                        <viewControllerLayoutGuide type="bottom" id="f7t-Ks-y2W"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V7I-0F-E3T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfy-wB-xdd">
-                                <rect key="frame" x="18" y="176" width="220" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-hZ-3JO">
-                                <rect key="frame" x="230" y="59" width="131" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="save"/>
-                                <connections>
-                                    <action selector="Save:" destination="uxB-gm-Ic7" eventType="touchUpInside" id="3u8-nk-QGf"/>
-                                </connections>
-                            </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ERROR! Image name does not exist in our database. Defaulting to placeholder image." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zB-px-jDD">
-                                <rect key="frame" x="246" y="230" width="115" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2l-Ow-nRB">
-                                <rect key="frame" x="18" y="60" width="129" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="cancel"/>
-                                <connections>
-                                    <action selector="Cancel:" destination="uxB-gm-Ic7" eventType="touchUpInside" id="vLV-fs-gBw"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vME-I0-43S">
-                                <rect key="frame" x="18" y="230" width="220" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqP-le-m1L">
-                                <rect key="frame" x="296" y="176" width="65" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Preview"/>
-                                <connections>
-                                    <action selector="Preview:" destination="uxB-gm-Ic7" eventType="touchUpInside" id="hq1-Pz-r4k"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ld8-G9-AOr" userLabel="Ingredient Name">
-                                <rect key="frame" x="16" y="119" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="Cancel" destination="J2l-Ow-nRB" id="ITx-WZ-a9g"/>
-                        <outlet property="ImageName" destination="mfy-wB-xdd" id="mPM-jU-7ko"/>
-                        <outlet property="IngredientName" destination="ld8-G9-AOr" id="Wre-hg-1uY"/>
-                        <outlet property="Preview" destination="KqP-le-m1L" id="pr1-G6-hat"/>
-                        <outlet property="PreviewImage" destination="vME-I0-43S" id="gNh-LX-eN5"/>
-                        <outlet property="PreviewImageError" destination="0zB-px-jDD" id="y4q-U2-qyT"/>
-                        <outlet property="Save" destination="zIF-hZ-3JO" id="FU6-TO-dgL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="36V-f5-sRv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2508" y="-708"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -403,7 +285,7 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yh-e2-NUU" id="g0g-Dg-uPh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-oq-awf">
@@ -550,5 +432,6 @@ CQkJA
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dM4-8B-Vby"/>
+        <segue reference="YhV-lT-I1P"/>
     </inferredMetricsTieBreakers>
 </document>
