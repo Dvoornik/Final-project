@@ -10,16 +10,19 @@
 import UIKit
 import CoreData
 
-class AddIngredientViewController: UIViewController {
+class AddIngredientViewController: UIViewController
+{
     
     // Declared Variables //
  
     @IBOutlet weak var IngredientName: UITextField!
+    // Commenting this out since ingredients does not have these anymore. -S.T.
+    /*
     @IBOutlet weak var ImageName: UITextField!
     @IBOutlet weak var Preview: UIButton!
     @IBOutlet weak var PreviewImage: UIImageView!
     @IBOutlet weak var PreviewImageError: UILabel!
-
+     */
     @IBOutlet weak var Cancel: UIButton!
     @IBOutlet weak var Save: UIButton!
     
@@ -33,11 +36,12 @@ class AddIngredientViewController: UIViewController {
         
         Save.layer.cornerRadius = 5
         Cancel.layer.cornerRadius = 5
+        // Commenting this out since ingredients does not have these anymore. -S.T.
+        /*
         Preview.layer.cornerRadius = 5
         
-       PreviewImage.image = #imageLiteral(resourceName: "placeholder")
-        
-
+        PreviewImage.image = #imageLiteral(resourceName: "placeholder")
+        */
         print("load Add Ingredient")
     }
     
@@ -46,7 +50,9 @@ class AddIngredientViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // Commenting this out since ingredients does not have this anymore. -S.T.
+    /*
     @IBAction func Preview(_ sender: Any)
     {
         // Unhides the error message if the user inputed a image name that is not found in our Assets. Sets a placeholder image instead.
@@ -67,8 +73,10 @@ class AddIngredientViewController: UIViewController {
             PreviewImageError.isHidden = false
         }
     }
+    */
     
-    @IBAction func Cancel(_ sender: Any) {
+    @IBAction func Cancel(_ sender: Any)
+    {
         print("cancel")
         self.dismiss(animated: true, completion: nil)
     }
@@ -79,28 +87,25 @@ class AddIngredientViewController: UIViewController {
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
         {
             newItem = IngredientMO(context: appDelegate.persistentContainer.viewContext)
-            
-            // newItem.ingrType = self.TypeOfRecipe
-            // Crashes if the image name does not exist in the app so this checks for that.
+            // Do ingredients have images or not? If so, the entity in the schema does not have a image attribute. Leaving this commented out and someone should do the same with the storyboard version as well. -S.T.
+            /*
             if(PreviewImageError.isHidden == false)
             {
                 PreviewImageError.isHidden = true
             }
             let name = ImageName.text!
-            PreviewImage.image = UIImage(named: name)
-            if(PreviewImage.image == nil || PreviewImage.image == #imageLiteral(resourceName: "placeholder"))
+            if(PreviewImage.image == nil || PreviewImage.image == #imageLiteral(resourceName: "placeholder")) // This will set the image as placeholder in CoreData instead of crashing the app with an unknown image name.
             {
                 PreviewImage.image = UIImage(named: "placeholder")
-                PreviewImageError.isHidden = false
+                //previewImageError.isHidden = false
+                //newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: "placeholder")!)!)
             }
-            if(PreviewImage.image != nil || PreviewImage.image == #imageLiteral(resourceName: "placeholder"))
+            else // This will set the image as the specified image name and will avoid the crash.
             {
-                // did not finish....
-                //newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: Image.text!)!)!)
+                //newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: ImageName.text!)!)!)
             }
-            // newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: ImageName.text!)!)!)
+            */
             newItem.ingname = IngredientName.text!
-            
             appDelegate.saveContext()
         }
         self.dismiss(animated: true, completion: nil)

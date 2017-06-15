@@ -66,24 +66,24 @@ class AddRecipeViewController: UIViewController
             newItem = DishDO(context: appDelegate.persistentContainer.viewContext)
             
             newItem.iType = self.TypeOfRecipe
-            // Crashes if the image name does not exist in the app so this checks for that.
+            // Crashes if the image name does not exist in the app so this checks for that. -S.T.
             if(previewImageError.isHidden == false)
             {
                 previewImageError.isHidden = true
             }
             let name = Image.text!
             previewImage.image = UIImage(named: name)
-            if(previewImage.image == nil || previewImage.image == #imageLiteral(resourceName: "placeholder"))
+            
+            if(previewImage.image == nil || previewImage.image == #imageLiteral(resourceName: "placeholder")) // This will set the image as placeholder in CoreData instead of crashing the app with an unknown image name. -S.T.
             {
                 previewImage.image = UIImage(named: "placeholder")
-                previewImageError.isHidden = false
+                //previewImageError.isHidden = false
+                newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: "placeholder")!)!)
             }
-            if(previewImage.image != nil || previewImage.image == #imageLiteral(resourceName: "placeholder"))
+            else // This will set the image as the specified image name and will avoid the crash. -S.T.
             {
-                // did not finish....
-                //newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: Image.text!)!)!)
+                newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: Image.text!)!)!)
             }
-            newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: Image.text!)!)!)
             newItem.iName = Name.text!
             
             appDelegate.saveContext()
