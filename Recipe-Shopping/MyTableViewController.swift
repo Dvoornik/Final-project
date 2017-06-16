@@ -97,7 +97,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         self.tableView.contentOffset = CGPoint(x: 0, y: 44)
         
         //Make 'Cancel' button in search bar white
-        (UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])).tintColor = UIColor.white
+        (UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self])).tintColor = UIColor.black
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -278,6 +278,9 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
                 let detailVC = segue.destination as! DetailViewController
                 detailVC.recipeDetail = searchController.isActive ? searchResults[indexPath.row] : MyDish[indexPath.row]
             }
+            
+            //display only back arrow image without text in segue view
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
         }
 
         // Get the new view controller using segue.destinationViewController.

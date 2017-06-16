@@ -21,7 +21,7 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     //////////// Declared Variables ////////////
     var newItem : DishDO!
     var TypeOfRecipe : String!
-    var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icreamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
+    var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icereamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
     var autocompleteResults : [String] = []
     
     override func viewDidLoad()

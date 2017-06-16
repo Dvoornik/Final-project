@@ -25,6 +25,9 @@ class DetailViewController: UIViewController {
         self.RecipeName.text = self.recipeDetail.iName
         self.RecipeImage.image = UIImage(data: self.recipeDetail.iImage as! Data)
         self.RecipeDescription.text = self.recipeDetail.iDescription
+        
+        //Name of recipe on navigation bar
+        navigationItem.title = self.RecipeName.text
 
     }
 

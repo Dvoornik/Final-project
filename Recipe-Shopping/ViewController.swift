@@ -37,12 +37,12 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "Appetizers" || segue.identifier == "Taco"{
+        if segue.identifier == "Appetizers"{
             
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Appetizers"
         }
-        else if segue.identifier == "MainDish" || segue.identifier == "Bulgogi" || segue.identifier == "Blinzy" || segue.identifier == "Soup" || segue.identifier == "Meatpie"{
+        else if segue.identifier == "MainDish" || segue.identifier == "Bulgogi" || segue.identifier == "Soup" || segue.identifier == "Meatpie"{
             
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Main Dish"
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             let detailVC = segue.destination as! MyShoppingListTableViewController
             detailVC.HeadTitle = "Shopping List"
         }
-        else if segue.identifier == "Desserts" || segue.identifier == "Icecream"{
+        else if segue.identifier == "Desserts" {
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Desserts"
         }
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Salads"
         }
-        else if (segue.identifier == "Drinks" || segue.identifier == "Cocktail" || segue.identifier == "Hotdrink" || segue.identifier == "Mojito"){
+        else if (segue.identifier == "Drinks" || segue.identifier == "Cocktail" || segue.identifier == "Hotdrink"){
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Drinks"
         }
