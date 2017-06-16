@@ -70,7 +70,7 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
         
         for e in Ingredient {
             
-            print(Ingredient[i].ingname!)
+            //print(Ingredient[i].ingname!)
             
             let word = e.ingname!
             
@@ -701,35 +701,6 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
         
     }
     
-    
-   /* @IBAction func Addbtn(_ sender: Any) {
-        let clickAddIngedient = UIAlertController(title: "New Ingredient", message: "Add New Ingredient", preferredStyle: UIAlertControllerStyle.alert)
-        
-        
-        let saveAction = UIAlertAction(title: "Save",
-                                       style: .default) { (action: UIAlertAction!) -> Void in
-                                        
-                                        //let textField = clickAddIngedient.textFields!
-                                        
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .default) { (action: UIAlertAction!) -> Void in
-        }
-        
-        clickAddIngedient.addTextField {
-            (textField: UITextField!) -> Void in
-        }
-        
-        clickAddIngedient.addAction(saveAction)
-        clickAddIngedient.addAction(cancelAction)
-        
-        self.present(clickAddIngedient,
-                     animated: true,
-                     completion: nil)
-
-    }*/
-    
     @IBAction func AddIngredientbtn(_ sender: Any) {
         let clickAddIngedient = UIAlertController(title: "New Ingredient", message: "Add New Ingredient", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -767,51 +738,9 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
 
         
     }
-    /*@IBAction func AddIngr(_ sender: Any) {
-        let clickAddIngedient = UIAlertController(title: "New Ingredient", message: "Add New Ingredient", preferredStyle: UIAlertControllerStyle.alert)
-        
-        
-        let saveAction = UIAlertAction(title: "Save",style: .default) { (action: UIAlertAction!) -> Void in
-            
-                                        
-                                        //let textField = clickAddIngedient.textFields!
-            let name = clickAddIngedient.textFields?[0].text
-            print("save")
-            print("save")
-            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
-            {
-                self.newItem = IngredientMO(context: appDelegate.persistentContainer.viewContext)
-                
-                self.newItem.ingname = name
-                
-                appDelegate.saveContext()
 
-                                        
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .default) { (action: UIAlertAction!) -> Void in
-        }
-        
-        clickAddIngedient.addTextField {
-            (textField: UITextField!) -> Void in
-        }
-        
-        //clickAddIngedient.addAction(saveAction)
-        clickAddIngedient.addAction(cancelAction)
-        
-        self.present(clickAddIngedient,
-                     animated: true,
-                     completion: nil)
-
+    @IBAction func Cancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    */
-    
-    
-    
-    
-    
-    
-    
 }
 

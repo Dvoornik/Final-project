@@ -47,9 +47,9 @@ class ViewController: UIViewController {
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Main Dish"
         }
-        else if segue.identifier == "ShopingList" {
+        else if segue.identifier == "ShoppingList" {
             
-            let detailVC = segue.destination as! MyShoppingListTableViewController
+            let detailVC = segue.destination as! ShoppingListTableViewController
             detailVC.HeadTitle = "Shopping List"
         }
         else if segue.identifier == "Desserts" {
