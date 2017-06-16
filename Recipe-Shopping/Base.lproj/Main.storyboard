@@ -1,15 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Shopping List Table View Controller-->
+        <scene sceneID="OdB-Hc-0eQ">
+            <objects>
+                <tableViewController id="m7i-iz-OSJ" customClass="ShoppingListTableViewController" customModule="Recipe_Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2mN-SX-JZP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingListCell" id="rS5-PT-xh1">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rS5-PT-xh1" id="8eF-er-EDk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8Rm-L5-gml" kind="show" id="Nqv-h4-tfk"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="m7i-iz-OSJ" id="Q9f-j1-C5m"/>
+                            <outlet property="delegate" destination="m7i-iz-OSJ" id="Zm2-gh-yeO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="zET-Qu-rYG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9fB-5q-Lqa">
+                            <connections>
+                                <action selector="AddShoppingList:" destination="m7i-iz-OSJ" id="u5a-9H-s6U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3X1-pm-tdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="-636"/>
+        </scene>
         <!--My Shopping List Table View Controller-->
         <scene sceneID="5jo-7e-pSL">
             <objects>
@@ -23,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOR-Cd-Gem" id="vkS-1F-TcX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -37,7 +75,7 @@
                     <navigationItem key="navigationItem" id="p7b-4M-bLA">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="p6u-gX-e7a">
                             <connections>
-                                <segue destination="QAf-O9-Y9M" kind="show" id="4Xp-3P-EYB"/>
+                                <segue destination="QAf-O9-Y9M" kind="show" id="uad-DV-XBA"/>
                             </connections>
                         </barButtonItem>
                         <string key="userLabel" base64-UTF8="YES">
@@ -48,7 +86,7 @@ CQkJA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afv-zp-Ysf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="-708"/>
+            <point key="canvasLocation" x="1775" y="-636"/>
         </scene>
         <!--Ingredients Table View Controller-->
         <scene sceneID="pi8-xz-HYn">
@@ -63,7 +101,7 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrC-N1-NA3" id="Yss-b9-i5T">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaH-xP-DUe">
@@ -84,19 +122,8 @@ CQkJA
                             <outlet property="delegate" destination="QAf-O9-Y9M" id="pah-9C-EMo"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="88a-kO-EeF">
-                            <connections>
-                                <action selector="Addbtn:" destination="QAf-O9-Y9M" id="fxc-bM-3hD"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="P6I-eu-ZvS">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="16B-Rb-aeO">
-                            <connections>
-                                <action selector="cancelbtn:" destination="QAf-O9-Y9M" id="ovp-eB-NaN"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fZd-4l-7yW">
                             <connections>
                                 <action selector="AddIngredientbtn:" destination="QAf-O9-Y9M" id="fY4-f2-ID0"/>
@@ -107,7 +134,7 @@ CQkJA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D6t-z4-q1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="-708.39580209895053"/>
+            <point key="canvasLocation" x="2607" y="-636"/>
         </scene>
         <!--Add Recipe View Controller-->
         <scene sceneID="sp5-DT-CvS">
@@ -194,7 +221,7 @@ CQkJA
                                         <rect key="frame" x="0.0" y="28" width="254" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RdP-9F-tgE" id="uHB-RH-yGb">
-                                            <rect key="frame" x="0.0" y="0.0" width="254" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="254" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -221,7 +248,7 @@ CQkJA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="379-EC-1pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2508" y="111.99400299850076"/>
+            <point key="canvasLocation" x="2607" y="102"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -262,7 +289,7 @@ CQkJA
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="grocerylist"/>
                                 <connections>
-                                    <segue destination="8Rm-L5-gml" kind="show" identifier="ShopingList" id="vwL-md-cnP"/>
+                                    <segue destination="m7i-iz-OSJ" kind="show" identifier="ShoppingList" id="2Y0-Jn-hed"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-Z1-j2d">
@@ -358,7 +385,7 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yh-e2-NUU" id="g0g-Dg-uPh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-oq-awf">
@@ -407,7 +434,7 @@ CQkJA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEx-9j-Wcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="111.99400299850076"/>
+            <point key="canvasLocation" x="1774" y="90"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="XUU-FU-Hu5">
@@ -450,14 +477,14 @@ CQkJA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgX-4X-hlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="828.93553223388312"/>
+            <point key="canvasLocation" x="1774" y="860"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i2S-5S-Nyx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2an-82-8t4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="d1B-2A-gKg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1B-2A-gKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -469,28 +496,6 @@ CQkJA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSm-wP-Uzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-103" y="112"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LNq-JT-LPk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="8S8-6I-2Mj" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kjd-eP-gp4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kAl-80-ZrS">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="QAf-O9-Y9M" kind="relationship" relationship="rootViewController" id="YhV-lT-I1P"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8jI-oM-alm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1716" y="-708"/>
         </scene>
     </scenes>
     <resources>
@@ -508,7 +513,6 @@ CQkJA
         <image name="tortillasoup" width="560" height="560"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YhV-lT-I1P"/>
-        <segue reference="yeE-X3-bxZ"/>
+        <segue reference="WvY-VZ-G00"/>
     </inferredMetricsTieBreakers>
 </document>
