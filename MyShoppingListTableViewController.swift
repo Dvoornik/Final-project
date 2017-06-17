@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MyShoppingListTableViewController: UITableViewController {
     
     var HeadTitle : String!
+    var DetailShoppingList : ShoppingList!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,9 @@ class MyShoppingListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.title = self.HeadTitle
+
+        self.navigationItem.title = self.DetailShoppingList.iSLname
+        
     }
 
     override func didReceiveMemoryWarning() {

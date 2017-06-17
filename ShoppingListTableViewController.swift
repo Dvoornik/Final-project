@@ -28,6 +28,7 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.title = self.HeadTitle
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "iSLname", ascending: true)
@@ -43,7 +44,6 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
                 try fetchResultsController.performFetch()
                 if let fetchedObjects = fetchResultsController.fetchedObjects {
                     MyShoppingList = fetchedObjects
-                    print(MyShoppingList.count)
                 }
             }
             catch {
@@ -158,15 +158,25 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "ShowDetailShoppinList"{
+            if let indexPath = self.tableView.indexPathForSelectedRow{
+        let detailVC = segue.destination as! MyShoppingListTableViewController
+            detailVC.DetailShoppingList = MyShoppingList[indexPath.row]
+            }
+        }
+
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
     @IBAction func AddShoppingList(_ sender: Any) {
         let AddShoppinglistName = UIAlertController(title: "New Shopping List", message: "Add Shopping List Name", preferredStyle: UIAlertControllerStyle.alert)
         
