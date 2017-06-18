@@ -11,7 +11,10 @@ import CoreData
 class IngredientsTableViewController: UITableViewController, UISearchResultsUpdating, NSFetchedResultsControllerDelegate {
     
     ////////// Declared Variables //////////
+    var MyShopList : String?
+    
     var newItem : IngredientMO!
+    var newList : IngredientListMO!
     
     var imagePassed : String?
     var descriptionPassed : String?
@@ -138,77 +141,46 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
         
         //self.tableView.backgroundColor = UIColor.black
         
+        self.title = "Ingredients"
         
+        print(MyShopList!)
         
         // Code for the Search Bar
         
         self.searchController = UISearchController(searchResultsController: nil)
-        
         self.searchController.searchBar.sizeToFit()
-        
         self.searchController.hidesNavigationBarDuringPresentation = false
-        
         self.searchController.searchResultsUpdater = self
-        
         self.searchController.dimsBackgroundDuringPresentation = false
-        
         self.tableView.tableHeaderView = self.searchController.searchBar
         
-        
-        
         let fetchRequest : NSFetchRequest<IngredientMO> = IngredientMO.fetchRequest()
-        
         let sortDescriptor = NSSortDescriptor(key: "ingname", ascending: true)
         
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        
-        
-        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
-            
-        {
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
             
             let context = appDelegate.persistentContainer.viewContext
-            
             fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            
             fetchResultsController.delegate = self
             
-            
-            
-            do
-                
-            {
+            do {
                 
                 try fetchResultsController.performFetch()
-                
                 if let fetchedObjects = fetchResultsController.fetchedObjects {
-                    
                     Ingredient = fetchedObjects
-                    
                     update_table()
-                    
                 }
-                
             } catch { print(error) }
-            
         }
-        
     }
-    
-    
     
     override func viewDidAppear(_ animated: Bool)
-        
     {
-        
         super.viewDidAppear(animated)
-        
         self.tableView.reloadData()
-        
     }
-    
-    
     
     /*
      
@@ -409,8 +381,28 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
         descriptionPassed = selectedElement.elementDescription
         
         performSegue(withIdentifier: "ElementDetailSegue", sender: self)
- */
+         */
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
+        {
+            newList = IngredientListMO(context: appDelegate.persistentContainer.viewContext)
+            newList.ingname = selectedElement.ingname
+            newList.shoppinglist = MyShopList
+            appDelegate.saveContext()
+        }
+ 
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier :"MyShoppingList") as! MyShoppingListTableViewController
         
+        viewController.MyShopList = MyShopList
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        // self.present(viewController, animated: true)
+
+        /* let myVC = storyboard?.instantiateViewController("MyShoppingListTableViewController") as! MyShoppingListTableViewController
+        
+        myVC.stringPassed = "myTest"
+        navigationController?.pushViewController(myVC, animated: true)
+        */
     }
     
     

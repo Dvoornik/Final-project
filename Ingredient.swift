@@ -23,3 +23,14 @@ class Ingredient: NSObject
         self.amount = amount
     }
 }
+
+class myIngredientList: NSObject
+{
+    var ingname = ""
+    var shoppinglist = ""
+    
+    init(name: String, listname: String) {
+        self.ingname = name
+        self.shoppinglist = listname
+    }
+}

@@ -15,8 +15,8 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
     var MyShoppingList : [ShoppingList] = []
     var fetchResultsController : NSFetchedResultsController<ShoppingList>!
     var NewShoppingList : ShoppingList!
-    
-    
+    var selectedList : String!
+    var secController : MyShoppingListTableViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,6 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.navigationItem.title = self.HeadTitle
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "iSLname", ascending: true)
@@ -44,6 +43,7 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
                 try fetchResultsController.performFetch()
                 if let fetchedObjects = fetchResultsController.fetchedObjects {
                     MyShoppingList = fetchedObjects
+                    print(MyShoppingList.count)
                 }
             }
             catch {
@@ -146,6 +146,11 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        print("selected", indexPath.section, indexPath.row)
+        secController.MyShopList = MyShoppingList[indexPath.row].iSLname
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -187,23 +192,26 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "ShowDetailShoppinList"{
-            if let indexPath = self.tableView.indexPathForSelectedRow{
-        let detailVC = segue.destination as! MyShoppingListTableViewController
-            detailVC.DetailShoppingList = MyShoppingList[indexPath.row]
-            }
-        }
-
-        
-        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier)
+        if segue.identifier == "MyShoppingList" {
+            print("shop list")
+            secController = segue.destination as? MyShoppingListTableViewController
+            // {
+                print("my title")
+                // secController.HeadTitle = selectedList
+            // }
+        }
     }
     
     @IBAction func AddShoppingList(_ sender: Any) {
