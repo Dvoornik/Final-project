@@ -29,9 +29,7 @@ class ViewController: UIViewController {
         
         appName.text = "DISHBOOK"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+        
         self.bulgogiBtn.alpha = 0
         self.cocktailBtn.alpha = 0
         self.chickenBtn.alpha = 0
@@ -57,6 +55,10 @@ class ViewController: UIViewController {
                 self.pieBtn.alpha = 1
                 self.shoplistBtn.alpha = 1
         }, completion: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
