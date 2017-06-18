@@ -7,12 +7,16 @@
 //
 
 import UIKit
+
 import CoreData
 
-class MyShoppingListTableViewController: UITableViewController {
+class MyShoppingListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
-    var HeadTitle : String!
-    var DetailShoppingList : ShoppingList!
+    var MyShopList : String!
+    var MyIngredientList : [IngredientListMO] = []
+    var fetchResultsController : NSFetchedResultsController<IngredientListMO>!
+    var NewIngredientList : IngredientMO!
+    var secController : IngredientsTableViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +26,30 @@ class MyShoppingListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
-        self.navigationItem.title = self.DetailShoppingList.iSLname
+        // print(self.HeadTitle)
+        self.navigationItem.title =  self.MyShopList
         
+        let fetchRequest : NSFetchRequest<IngredientListMO> = IngredientListMO.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "ingname", ascending: true)
+        //fetchRequest.predicate = NSPredicate(format: "iType == %@", self.HeadTitle)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = NSPredicate(format: "shoppinglist == %@", MyShopList)
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultsController.delegate = self
+            do {
+                try fetchResultsController.performFetch()
+                if let fetchedObjects = fetchResultsController.fetchedObjects {
+                    MyIngredientList = fetchedObjects
+                    print(MyIngredientList.count)
+                }
+            }
+            catch {
+                print(error)
+            }
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,24 +61,36 @@ class MyShoppingListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return MyIngredientList.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        
+        let cellIdentifier = "MyShoppingListCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        
         // Configure the cell...
-
+        
+        var cellItem : IngredientListMO
+        cellItem = MyIngredientList[indexPath.row]
+        cell.textLabel?.text = cellItem.ingname
+        
         return cell
     }
-    */
 
+   /*
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        print("selected", indexPath.section, indexPath.row)
+        secController.MyShopList = MyShoppingList[indexPath.row].iSLname
+    }
+    */
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -98,5 +135,35 @@ class MyShoppingListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier)
+        if segue.identifier == "AddIngredient" {
+            print("ingredient list")
+            secController = segue.destination as? IngredientsTableViewController
+            secController.MyShopList = MyShopList
+        }
+    }
+   
+    /*
+    @IBAction func AddIngredient(_ sender: Any) {
+        let AddShoppinglistName = UIAlertController(title: "New Shopping List", message: "Add Shopping List Name", preferredStyle: UIAlertControllerStyle.alert)
+        
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default){
+            (action: UIAlertAction!) -> Void in
+            let name = AddShoppinglistName.textFields![0].text
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                self.NewShoppingList = ShoppingList(context: appDelegate.persistentContainer.viewContext)
+                
+                self.NewShoppingList.iSLname = name
+                
+                appDelegate.saveContext()
+            }
+            
+        }
+    }
+    */
 }
