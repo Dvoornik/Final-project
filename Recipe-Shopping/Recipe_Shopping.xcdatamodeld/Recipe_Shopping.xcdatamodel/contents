@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16E195" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="15G1004" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Dish" representedClassName="DishDO" syncable="YES" codeGenerationType="class">
         <attribute name="iDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="iImage" optional="YES" attributeType="Binary" syncable="YES"/>
@@ -9,6 +9,10 @@
     <entity name="Ingredient" representedClassName="IngredientMO" syncable="YES" codeGenerationType="class">
         <attribute name="ingname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="IngredientList" representedClassName="IngredientListMO" syncable="YES" codeGenerationType="class">
+        <attribute name="ingname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shoppinglist" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="ShoppingList" representedClassName="ShoppingList" syncable="YES" codeGenerationType="class">
         <attribute name="iSLname" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -16,5 +20,6 @@
         <element name="Dish" positionX="-45" positionY="0" width="128" height="105"/>
         <element name="Ingredient" positionX="-36" positionY="36" width="128" height="60"/>
         <element name="ShoppingList" positionX="-27" positionY="36" width="128" height="60"/>
+        <element name="IngredientList" positionX="-36" positionY="27" width="128" height="75"/>
     </elements>
 </model>
