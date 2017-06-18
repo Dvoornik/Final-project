@@ -51,7 +51,36 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
             }
             
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        //Add background view to the table view
+        let backgroundImage : UIImage = UIImage(named: "background.jpg")!
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        //Gets rid of empty extra cells at the end of TV
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        //fill the view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
+        imageView.contentMode = .scaleAspectFill
+        
+        self.tableView.backgroundColor = .lightGray
+    }
+    
+    //Method to make table view cells transparent
+    
+    func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        //set cell's color to a partly transparent color
+        //cell.contentView.backgroundColor = UIColor.clear
+        //cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        let myCell = cell
+        myCell.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        print("I'm being called")
+        //cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.5)
+       
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
