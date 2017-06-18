@@ -400,21 +400,14 @@ CQkJA
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-oq-awf">
-                                            <rect key="frame" x="123" y="8" width="173" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9e-6H-opm">
                                             <rect key="frame" x="14" y="8" width="91" height="81"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfc-TY-510">
-                                            <rect key="frame" x="123" y="37" width="173" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-oq-awf">
+                                            <rect key="frame" x="122" y="8" width="173" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -424,7 +417,6 @@ CQkJA
                                 <connections>
                                     <outlet property="cellRecipeImage" destination="Q9e-6H-opm" id="p3K-ew-SGo"/>
                                     <outlet property="cellRecipeName" destination="N06-oq-awf" id="fuF-ss-3qO"/>
-                                    <outlet property="cellRecipeType" destination="dfc-TY-510" id="uyq-xs-qs8"/>
                                     <segue destination="P2a-WN-blf" kind="show" identifier="DetailViewRecipe" id="XlM-eq-xEV"/>
                                 </connections>
                             </tableViewCell>
@@ -446,7 +438,7 @@ CQkJA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DEx-9j-Wcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="90"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="89.505247376311857"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="XUU-FU-Hu5">
@@ -460,21 +452,26 @@ CQkJA
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0p-4B-H8f">
-                                <rect key="frame" x="102" y="118" width="173" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-ht-gOm">
-                                <rect key="frame" x="68" y="188" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="detailbackground" translatesAutoresizingMaskIntoConstraints="NO" id="5ht-oL-gZS">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Recipe Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O5V-Ut-iQ4">
-                                <rect key="frame" x="68" y="390" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aYe-yg-ubs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5S-cE-XGe">
+                                <rect key="frame" x="0.0" y="64" width="375" height="249"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qz4-Ql-SjF">
+                                <rect key="frame" x="16" y="328" width="343" height="295"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -482,14 +479,14 @@ CQkJA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="RecipeDescription" destination="O5V-Ut-iQ4" id="aKz-qf-8eh"/>
-                        <outlet property="RecipeImage" destination="EHB-ht-gOm" id="vN7-nQ-rjT"/>
-                        <outlet property="RecipeName" destination="b0p-4B-H8f" id="7Fc-Au-5Y8"/>
+                        <outlet property="RecipeDescription" destination="Qz4-Ql-SjF" id="XLl-W2-K83"/>
+                        <outlet property="RecipeImage" destination="M5S-cE-XGe" id="iQr-3K-44p"/>
+                        <outlet property="scrollContainer" destination="aYe-yg-ubs" id="Q96-jd-T6a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgX-4X-hlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="860"/>
+            <point key="canvasLocation" x="1773.5999999999999" y="859.52023988005999"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i2S-5S-Nyx">
@@ -514,6 +511,7 @@ CQkJA
         <image name="appetizer" width="468" height="456"/>
         <image name="bulgogi" width="450" height="450"/>
         <image name="daiquiri" width="300" height="300"/>
+        <image name="detailbackground" width="161" height="313"/>
         <image name="grocerylist" width="170" height="170"/>
         <image name="pomegrandeliqueur" width="235" height="235"/>
         <image name="prunepie" width="360" height="358"/>

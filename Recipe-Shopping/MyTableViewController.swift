@@ -209,9 +209,20 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         //cell.textLabel?.text = cellItem.iName
         //cell.imageView?.image = UIImage(data: cellItem.iImage as! Data)
         
+            //display rounded image
+            cell.cellRecipeImage?.layer.cornerRadius = cell.cellRecipeImage.frame.size.width/2.0
+            cell.cellRecipeImage?.clipsToBounds = true
+            cell.cellRecipeImage?.layer.masksToBounds = true
+        
             cell.cellRecipeName?.text = cellItem.iName
             cell.cellRecipeType?.text = cellItem.iType
             cell.cellRecipeImage?.image = UIImage(data: cellItem.iImage as! Data)
+        
+            //fly-in animation
+            var rotationTransform : CATransform3D = CATransform3DIdentity
+            rotationTransform = CATransform3DTranslate(rotationTransform, -250, -250, 0)
+            cell.cellRecipeImage?.layer.transform = rotationTransform
+            UIView.animate(withDuration: 3.0, animations: { cell.cellRecipeImage?.layer.transform = CATransform3DIdentity})
         
         return cell
     }

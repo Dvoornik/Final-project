@@ -10,8 +10,8 @@ import UIKit
 import CoreData
 
 class DetailViewController: UIViewController {
-
-    @IBOutlet weak var RecipeName: UILabel!
+    
+    @IBOutlet weak var scrollContainer: UITextView!
     @IBOutlet weak var RecipeImage: UIImageView!
     @IBOutlet weak var RecipeDescription: UITextView!
     
@@ -22,13 +22,12 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        self.RecipeName.text = self.recipeDetail.iName
+        //self.RecipeName.text = self.recipeDetail.iName
         self.RecipeImage.image = UIImage(data: self.recipeDetail.iImage as! Data)
         self.RecipeDescription.text = self.recipeDetail.iDescription
         
         //Name of recipe on navigation bar
-        navigationItem.title = self.RecipeName.text
-
+        navigationItem.title = self.recipeDetail.iName
     }
 
     override func didReceiveMemoryWarning() {
