@@ -19,10 +19,13 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
     var searchController: UISearchController!
     var searchResults : [DishDO] = []
     
-    
-    /*var dishes = ["Bruchetta","Fried Chicken"]
-    var type = ["Appetizers","Main Dish"]
-    var image = ["appetizers","maindish"]*/
+    var presetRecipeName = ["Bruschetta", "Fried Chicken", "Cheesecake"]
+    var presetRecipeType = ["Appetizers", "Main Dish", "Desserts"]
+    var presetRecipeImage = ["bruschetta", "fried_chicken", "cheesecake"]
+    var presetRecipeDescription = ["3 tablespoons olive oil\n1 tablespoon snipped fresh chives\n1 tablespoon snipped fresh basil\n1 tablespoon lemon juice\n1 clove garlic, minced\n2 cups seeded and chopped plum and/or yellow tomatoes\n1/2 cup finely chopped red onion\nSalt\nFreshly ground black pepper\n1 8 ounce loaf baguette-style French bread\n\n1. In a medium bowl stir together 1 tablespoon of the olive oil, the chives, basil, lemon juice, and garlic. Add tomatoes and onion; toss to coat. Season to taste with salt and pepper. Set aside.\n\n2. Cut the bread into 36 slices. Arrange bread slices on 2 large baking sheets. Lightly brush one side of each slice with some of the remaining 2 tablespoons olive oil. Broil bread, one pan at a time, 3 to 4 inches from heat for 2 to 3 minutes or until toasted. Turn bread and broil other side for 1 to 2 minutes or until toasted.\n\n3. To serve, with a slotted spoon, spoon tomato mixture onto the oiled side of each toast slice. If desired, garnish with fresh basil. Serve within 30 minutes. Makes 36 appetizer servings.",
+        "1 2 1/2 - 3 - pound broiler-fryer chicken cut up\n1/2 cup all-purpose flour\n1/2 teaspoon salt\n1/2 teaspoon pepper\n1 5 - ounce can evaporated milk\n2/3 cup water\nLard, shortening, or cooking oil\n\n1. In a shallow dish, stir together the all-purpose flour, salt, and pepper. Set aside.\n\n2. In a bowl, stir together the evaporated milk and the water. Set aside.\n\n3. In a 12-inch skillet, heat enough lard, shortening, or cooking oil over medium heat to make 1/2-inch depth. Dip the chicken pieces in the milk mixture. Then, roll chicken in the flour mixture.\n\n4. Cook the chicken in hot fat, uncovered, about 10 minutes or until the pieces are golden on the bottom. Turn and cook the pieces about 15 minutes more or until meat is easily pierced with a fork and no longer pink.\n\n5. Remove chicken pieces from the skillet. Drain the chicken on paper towels. Serve warm. Makes 4 to 6 servings.",
+        "9 graham cracker boards (4 crackers each)\n1 tablespoon sugar\npinch salt\n5 tablespoons unsalted butter\n4 8 - ounce packages cream cheese, softened\n1 1/4 cups sugar\n3 large eggs\n3 tablespoons all-purpose flour\n1 tablespoon vanilla extract\n\n1. Heat oven to 325 degrees.\n\n2. Place graham crackers in large resealable plastic bag and crush with a rolling pin. Transfer crumbs to small bowl and add sugar and salt. Stir in melted butter until all crumbs are evenly moistened. Transfer crumbs to 9-inch springform pan and press onto bottom and 1/2 inch up sides. Place sheet of extra-wide heavy-duty foil on countertop; place pan in center and fold foil up around pan.\n\n3. In large bowl, beat cream cheese until smooth. Add sugar and beat on low speed until blended. Add eggs, one at a time, beating well after each. Beat in flour and vanilla. Pour filling into crust. Place cheesecake in large roasting pan and fill pan with enough hot water to come halfway up side of springform pan.\n\n4. Bake cheesecake at 325 degrees for 1 hour. Turn oven off, prop door open and let cool in oven for 30 minutes. Remove from oven and cool completely. Refrigerate overnight. To serve, release and remove side of pan before slicing."]
+
     
     /*var AppetizersRecipeBook = [
         Recipe(recType: "Appetizers", recName: "Bruchetta", recImage: #imageLiteral(resourceName: "appetizers"),
@@ -46,7 +49,7 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        loadPresetData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -300,4 +303,39 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
             tableView.reloadData()
         }
     }
+    
+    //For loading preset recipes to the recipe database
+    func loadPresetData() {
+        
+        var addItem : DishDO!
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let request: NSFetchRequest<DishDO> = DishDO.fetchRequest()
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                MyDish = try context.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        if MyDish.count == 0 {
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                if MyDish.count == 0 {
+                    
+                    for i in 0...presetRecipeName.count - 1 {
+                        addItem = DishDO(context: appDelegate.persistentContainer.viewContext)
+                        addItem.iName = presetRecipeName[i]
+                        addItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: presetRecipeImage[i])!)!)
+                        addItem.iDescription = presetRecipeDescription[i]
+                        addItem.iType = presetRecipeType[i]
+                        appDelegate.saveContext()
+                    }
+                }
+                
+            }
+        }
+    }
+
 }
