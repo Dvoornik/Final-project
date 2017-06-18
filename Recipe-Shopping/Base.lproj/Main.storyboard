@@ -27,7 +27,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="8Rm-L5-gml" kind="show" id="Nqv-h4-tfk"/>
+                                    <segue destination="8Rm-L5-gml" kind="show" identifier="ShowDetailShoppinList" id="Nqv-h4-tfk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
