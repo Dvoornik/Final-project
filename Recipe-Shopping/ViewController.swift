@@ -11,11 +11,52 @@ import UIKit
 class ViewController: UIViewController {
     
 
+    @IBOutlet weak var bulgogiBtn: UIButton!
+    @IBOutlet weak var cocktailBtn: UIButton!
+    @IBOutlet weak var chickenBtn: UIButton!
+    @IBOutlet weak var saladBtn: UIButton!
+    @IBOutlet weak var soupBtn: UIButton!
+    @IBOutlet weak var teaBtn: UIButton!
+    @IBOutlet weak var cinndrinkBtn: UIButton!
+    @IBOutlet weak var appetizerBtn: UIButton!
+    @IBOutlet weak var pieBtn: UIButton!
+    @IBOutlet weak var appName: UITextView!
+    @IBOutlet weak var shoplistBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        appName.text = "DISHBOOK"
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.bulgogiBtn.alpha = 0
+        self.cocktailBtn.alpha = 0
+        self.chickenBtn.alpha = 0
+        self.saladBtn.alpha = 0
+        self.soupBtn.alpha = 0
+        self.teaBtn.alpha = 0
+        self.cinndrinkBtn.alpha = 0
+        self.appetizerBtn.alpha = 0
+        self.pieBtn.alpha = 0
+        self.shoplistBtn.alpha = 0
+        
+        //animate buttons on initial view
+        UIView.animate(withDuration: 2.0, delay: 2.0, options: [], animations:
+            {
+                self.bulgogiBtn.alpha = 1
+                self.cocktailBtn.alpha = 1
+                self.chickenBtn.alpha = 1
+                self.saladBtn.alpha = 1
+                self.soupBtn.alpha = 1
+                self.teaBtn.alpha = 1
+                self.cinndrinkBtn.alpha = 1
+                self.appetizerBtn.alpha = 1
+                self.pieBtn.alpha = 1
+                self.shoplistBtn.alpha = 1
+        }, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,8 +108,5 @@ class ViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-
-
-
 }
 

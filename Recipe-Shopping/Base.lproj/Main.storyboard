@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rS5-PT-xh1" id="8eF-er-EDk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -61,7 +61,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOR-Cd-Gem" id="vkS-1F-TcX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -101,7 +101,7 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrC-N1-NA3" id="Yss-b9-i5T">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaH-xP-DUe">
@@ -221,7 +221,7 @@ CQkJA
                                         <rect key="frame" x="0.0" y="28" width="254" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RdP-9F-tgE" id="uHB-RH-yGb">
-                                            <rect key="frame" x="0.0" y="0.0" width="254" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="254" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -285,7 +285,7 @@ CQkJA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paK-LQ-gyE">
-                                <rect key="frame" x="244" y="546" width="106" height="101"/>
+                                <rect key="frame" x="227" y="528" width="106" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="grocerylist"/>
                                 <connections>
@@ -293,7 +293,7 @@ CQkJA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UsE-Z1-j2d">
-                                <rect key="frame" x="212" y="420" width="125" height="118"/>
+                                <rect key="frame" x="208" y="371" width="125" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <size key="titleShadowOffset" width="0.0" height="-1"/>
                                 <state key="normal" image="salad"/>
@@ -302,7 +302,7 @@ CQkJA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDy-Rf-eem">
-                                <rect key="frame" x="150" y="138" width="131" height="117"/>
+                                <rect key="frame" x="147" y="155" width="131" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="prunepie"/>
                                 <connections>
@@ -310,7 +310,7 @@ CQkJA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YH-cY-5pt">
-                                <rect key="frame" x="268" y="263" width="82" height="69"/>
+                                <rect key="frame" x="277" y="248" width="82" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="tea"/>
                                 <connections>
@@ -326,19 +326,11 @@ CQkJA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0I-J6-xAv">
-                                <rect key="frame" x="46" y="214" width="59" height="58"/>
+                                <rect key="frame" x="64" y="233" width="59" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="pomegrandeliqueur"/>
                                 <connections>
                                     <segue destination="wy4-8q-Q4S" kind="show" identifier="Hotdrink" id="Aki-Zk-sJK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87X-Gt-nJB">
-                                <rect key="frame" x="100" y="263" width="231" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="meatpie"/>
-                                <connections>
-                                    <segue destination="wy4-8q-Q4S" kind="show" identifier="Meatpie" id="A76-av-UUP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFK-dQ-8LQ">
@@ -357,6 +349,13 @@ CQkJA
                                     <segue destination="wy4-8q-Q4S" kind="show" identifier="Bulgogi" id="WvY-VZ-G00"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="AppName" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-W6-W2I">
+                                <rect key="frame" x="73" y="305" width="229" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="37"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -367,6 +366,19 @@ CQkJA
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Vq-FA-MUT"/>
+                    <connections>
+                        <outlet property="appName" destination="ToS-W6-W2I" id="zJh-2e-8Qt"/>
+                        <outlet property="appetizerBtn" destination="qNw-8P-0Hc" id="vfD-rl-6f6"/>
+                        <outlet property="bulgogiBtn" destination="o3c-vU-wpE" id="ko4-pd-hfA"/>
+                        <outlet property="chickenBtn" destination="dBJ-78-3Wl" id="Rvq-0N-iNa"/>
+                        <outlet property="cinndrinkBtn" destination="R0I-J6-xAv" id="Eph-WJ-byn"/>
+                        <outlet property="cocktailBtn" destination="Cle-D8-bc2" id="K3T-wm-EG4"/>
+                        <outlet property="pieBtn" destination="NDy-Rf-eem" id="Qsi-qU-I3a"/>
+                        <outlet property="saladBtn" destination="UsE-Z1-j2d" id="KjW-gk-tPe"/>
+                        <outlet property="shoplistBtn" destination="paK-LQ-gyE" id="sa5-7b-jAC"/>
+                        <outlet property="soupBtn" destination="wFK-dQ-8LQ" id="k2q-A0-S2Y"/>
+                        <outlet property="teaBtn" destination="3YH-cY-5pt" id="FD6-ZV-SAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,7 +397,7 @@ CQkJA
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yh-e2-NUU" id="g0g-Dg-uPh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N06-oq-awf">
@@ -484,7 +496,7 @@ CQkJA
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2an-82-8t4" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d1B-2A-gKg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="d1B-2A-gKg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -503,7 +515,6 @@ CQkJA
         <image name="bulgogi" width="450" height="450"/>
         <image name="daiquiri" width="300" height="300"/>
         <image name="grocerylist" width="170" height="170"/>
-        <image name="meatpie" width="603" height="413"/>
         <image name="pomegrandeliqueur" width="235" height="235"/>
         <image name="prunepie" width="360" height="358"/>
         <image name="roastedchicken" width="200" height="169"/>
@@ -513,6 +524,6 @@ CQkJA
         <image name="tortillasoup" width="560" height="560"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WvY-VZ-G00"/>
+        <segue reference="RYe-e4-gDN"/>
     </inferredMetricsTieBreakers>
 </document>
