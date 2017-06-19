@@ -57,7 +57,7 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         super.viewWillAppear(animated)
         
         //Add background view to the table view
-        let backgroundImage : UIImage = UIImage(named: "background.jpg")!
+        let backgroundImage : UIImage = UIImage(named: "groconwhiteboard.jpeg")!
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView
         
@@ -66,21 +66,6 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         
         //fill the view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
         imageView.contentMode = .scaleAspectFill
-        
-        self.tableView.backgroundColor = .lightGray
-    }
-    
-    //Method to make table view cells transparent
-    
-    func tableView(_ tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAt indexPath: IndexPath){
-        //set cell's color to a partly transparent color
-        //cell.contentView.backgroundColor = UIColor.clear
-        //cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        let myCell = cell
-        myCell.backgroundColor = UIColor(white: 1, alpha: 0.5)
-        print("I'm being called")
-        //cell.contentView.backgroundColor = UIColor(white: 1, alpha: 0.5)
-       
     }
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
