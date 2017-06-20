@@ -17,6 +17,7 @@ class AddStepsForRecipeViewController: UIViewController
     ////////// Declared Variables //////////
     var newRecipe : DishDO!
     var recipeNameString : String = ""
+    var recipeText: ((String) -> ())!
 
     override func viewDidLoad()
     {
@@ -54,8 +55,11 @@ class AddStepsForRecipeViewController: UIViewController
     {
         // Save the recipe steps to the recipe object. Does not save it to CoreData yet. -S.T.
         // Strangely, this will result in a fatal error... -S.T.
-        newRecipe.iDescription = String(recipeDescription.text)
-        
+        //newRecipe.iDescription = String(recipeDescription.text)
+        print("inside Steps Save")
+        recipeText(String(recipeDescription.text!))
+        print("inside Steps Save after saved")
+        self.dismiss(animated: true, completion: nil)
     }
     
     

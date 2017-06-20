@@ -24,7 +24,7 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     var TypeOfRecipe : String!
     var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icereamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
     var autocompleteResults : [String] = []
-    //var recipeSteps : String = ""
+    var recipeSteps : String = ""
     
     override func viewDidLoad()
     {
@@ -61,16 +61,27 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
             let addStepVC = segue.destination as! AddStepsForRecipeViewController
             if(Name.text != nil || Name.text != "")
             {
-                addStepVC.newRecipe = newItem
+                print("1 inside addStepVC")
+                //addStepVC.newRecipe = newItem
+                addStepVC.recipeText = addData
+                print("inside addStepVC")
+                //print(addStepVC.recipeText)
                 //addStepVC.recipeNameString = recipeSteps
                 addStepVC.recipeNameString = Name.text!
             }
             else // This prevents a crash if the user leaves the Name textfield empty.
             {
                 //addStepVC.recipeNameString = recipeSteps
-                addStepVC.newRecipe = newItem
+                //addStepVC.newRecipe = newItem
             }
         }
+        print("do I get called?")
+    }
+    
+    func addData(newText: String){
+        recipeSteps = newText
+        print("Printing recipe Steps")
+        print(recipeSteps)
     }
     
     @IBAction func Preview(_ sender: Any)
@@ -98,6 +109,7 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     
     @IBAction func Save(_ sender: Any)
     {
+        print("Inside Save button in AddRecipeController @ start")
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate)
         {
             newItem = DishDO(context: appDelegate.persistentContainer.viewContext)
@@ -122,8 +134,9 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
                 newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: Image.text!)!)!)
             }
             newItem.iName = Name.text!
+            print("Inside Save button in AddRecipeController @ right before recipe steps")
+            newItem.iDescription = recipeSteps
             // saveContext should also save the recipe steps if you already added them. -S.T.
-            //newItem.iDescription = recipeSteps
             appDelegate.saveContext()
         }
         self.dismiss(animated: true, completion: nil)
