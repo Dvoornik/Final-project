@@ -17,12 +17,14 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var previewImageError: UILabel!
     @IBOutlet weak var autocompleteTableView: UITableView!
+
     
     //////////// Declared Variables ////////////
     var newItem : DishDO!
     var TypeOfRecipe : String!
     var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icereamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
     var autocompleteResults : [String] = []
+    //var recipeSteps : String = ""
     
     override func viewDidLoad()
     {
@@ -36,6 +38,33 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func addSteps(_ sender: Any)
+    {
+        // Perform the segue into the Add Steps VC. -S.T.
+        performSegue(withIdentifier: "addStepSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        // if the segue ID is this... -S.T.
+        if(segue.identifier == "addStepSegue")
+        {
+            // ... send the recipe name and the recipe object to the Add Step VC for clarity to the user. -S.T.
+            let addStepVC = segue.destination as! AddStepsForRecipeViewController
+            if(Name.text != nil || Name.text != "")
+            {
+                addStepVC.newRecipe = newItem
+                //addStepVC.recipeNameString = recipeSteps
+                addStepVC.recipeNameString = Name.text!
+            }
+            else // This prevents a crash if the user leaves the Name textfield empty.
+            {
+                //addStepVC.recipeNameString = recipeSteps
+                addStepVC.newRecipe = newItem
+            }
+        }
     }
     
     @IBAction func Preview(_ sender: Any)
@@ -87,7 +116,8 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
                 newItem.iImage = NSData(data:UIImagePNGRepresentation(UIImage(named: Image.text!)!)!)
             }
             newItem.iName = Name.text!
-            
+            // saveContext should also save the recipe steps if you already added them. -S.T.
+            //newItem.iDescription = recipeSteps
             appDelegate.saveContext()
         }
         self.dismiss(animated: true, completion: nil)
