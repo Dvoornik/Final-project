@@ -94,13 +94,13 @@ class MyShoppingListTableViewController: UITableViewController, NSFetchedResults
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "MyShoppingListCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! MyShoppingListTableViewCell
         
         // Configure the cell...
         
         var cellItem : IngredientListMO
         cellItem = MyIngredientList[indexPath.row]
-        cell.textLabel?.text = cellItem.ingname
+        cell.listingredient.text = cellItem.ingname
         
         return cell
     }

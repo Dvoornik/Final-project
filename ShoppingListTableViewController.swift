@@ -120,13 +120,13 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ShoppingListCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ShoppingListTableViewCell
 
         // Configure the cell...
         
         var cellItem : ShoppingList
         cellItem = MyShoppingList[indexPath.row]
-        cell.textLabel?.text = cellItem.iSLname
+        cell.shoppinglistName.text = cellItem.iSLname
 
         return cell
     }
