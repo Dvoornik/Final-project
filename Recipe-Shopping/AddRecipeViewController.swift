@@ -32,6 +32,12 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
         // Do any additional setup after loading the view.
         Image.delegate = self
         autocompleteTableView.delegate = self
+        
+        //Add background to add view controller
+        var backgroundImage : UIImage = UIImage(named: "detailbackground.png")!
+        let myInsets : UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        backgroundImage = backgroundImage.resizableImage(withCapInsets: myInsets)
+        self.view.backgroundColor = UIColor.init(patternImage:backgroundImage)
     }
 
     override func didReceiveMemoryWarning()

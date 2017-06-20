@@ -13,10 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var bulgogiBtn: UIButton!
     @IBOutlet weak var cocktailBtn: UIButton!
-    @IBOutlet weak var chickenBtn: UIButton!
     @IBOutlet weak var saladBtn: UIButton!
-    @IBOutlet weak var soupBtn: UIButton!
-    @IBOutlet weak var teaBtn: UIButton!
     @IBOutlet weak var cinndrinkBtn: UIButton!
     @IBOutlet weak var appetizerBtn: UIButton!
     @IBOutlet weak var pieBtn: UIButton!
@@ -32,10 +29,7 @@ class ViewController: UIViewController {
         
         self.bulgogiBtn.alpha = 0
         self.cocktailBtn.alpha = 0
-        self.chickenBtn.alpha = 0
         self.saladBtn.alpha = 0
-        self.soupBtn.alpha = 0
-        self.teaBtn.alpha = 0
         self.cinndrinkBtn.alpha = 0
         self.appetizerBtn.alpha = 0
         self.pieBtn.alpha = 0
@@ -46,10 +40,7 @@ class ViewController: UIViewController {
             {
                 self.bulgogiBtn.alpha = 1
                 self.cocktailBtn.alpha = 1
-                self.chickenBtn.alpha = 1
                 self.saladBtn.alpha = 1
-                self.soupBtn.alpha = 1
-                self.teaBtn.alpha = 1
                 self.cinndrinkBtn.alpha = 1
                 self.appetizerBtn.alpha = 1
                 self.pieBtn.alpha = 1
@@ -85,7 +76,7 @@ class ViewController: UIViewController {
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Appetizers"
         }
-        else if segue.identifier == "MainDish" || segue.identifier == "Bulgogi" || segue.identifier == "Soup" || segue.identifier == "Meatpie"{
+        else if segue.identifier == "Bulgogi"{
             
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Main Dish"
@@ -103,7 +94,7 @@ class ViewController: UIViewController {
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Salads"
         }
-        else if (segue.identifier == "Drinks" || segue.identifier == "Cocktail" || segue.identifier == "Hotdrink"){
+        else if (segue.identifier == "Cocktail" || segue.identifier == "Hotdrink"){
             let detailVC = segue.destination as! MyTableViewController
             detailVC.HeadTitle = "Drinks"
         }

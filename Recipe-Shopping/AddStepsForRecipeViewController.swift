@@ -21,6 +21,12 @@ class AddStepsForRecipeViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        //Add background to add view controller
+        var backgroundImage : UIImage = UIImage(named: "detailbackground.png")!
+        let myInsets : UIEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+        backgroundImage = backgroundImage.resizableImage(withCapInsets: myInsets)
+        self.view.backgroundColor = UIColor.init(patternImage:backgroundImage)
 
         // Do any additional setup after loading the view.
         if(recipeNameString == "")
