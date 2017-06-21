@@ -11,14 +11,20 @@ import CoreData
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var scrollContainer: UITextView!
     @IBOutlet weak var RecipeImage: UIImageView!
     @IBOutlet weak var RecipeDescription: UITextView!
+    @IBOutlet weak var detailviewscrollview: UIScrollView!
     
     var recipeDetail : DishDO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let contentHeight = RecipeImage.bounds.height + RecipeDescription.bounds.height
+        
+        detailviewscrollview.contentSize = CGSize (width: view.bounds.width, height: contentHeight)
+        detailviewscrollview.addSubview(RecipeImage)
+        detailviewscrollview.addSubview(RecipeDescription)
 
         // Do any additional setup after loading the view.
         

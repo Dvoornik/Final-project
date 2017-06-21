@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2an-82-8t4">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <tableViewController id="m7i-iz-OSJ" customClass="ShoppingListTableViewController" customModule="Recipe_Shopping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" id="2mN-SX-JZP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingListCell" rowHeight="78" id="rS5-PT-xh1" customClass="ShoppingListTableViewCell" customModule="Recipe_Shopping" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="78"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rS5-PT-xh1" id="8eF-er-EDk">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-V5-gAQ">
@@ -65,15 +65,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="MyShoppingList" id="8Rm-L5-gml" customClass="MyShoppingListTableViewController" customModule="Recipe_Shopping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QyF-XU-ULc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyShoppingListCell" id="iOR-Cd-Gem" customClass="MyShoppingListTableViewCell" customModule="Recipe_Shopping" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iOR-Cd-Gem" id="vkS-1F-TcX">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SN6-HL-fUC">
@@ -119,15 +119,15 @@ CQkJA
             <objects>
                 <tableViewController id="QAf-O9-Y9M" customClass="IngredientsTableViewController" customModule="Recipe_Shopping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="urT-Sj-iBX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientCell" id="CrC-N1-NA3" customClass="IngredientTableViewCell" customModule="Recipe_Shopping" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CrC-N1-NA3" id="Yss-b9-i5T">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaH-xP-DUe">
@@ -171,7 +171,7 @@ CQkJA
                         <viewControllerLayoutGuide type="bottom" id="trW-vQ-TPy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nmh-gf-83G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter name of recipe here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-i2-iHy">
@@ -229,7 +229,7 @@ CQkJA
                                         <rect key="frame" x="0.0" y="28" width="254" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RdP-9F-tgE" id="uHB-RH-yGb">
-                                            <rect key="frame" x="0.0" y="0.0" width="254" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="254" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -304,11 +304,11 @@ CQkJA
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="table" translatesAutoresizingMaskIntoConstraints="NO" id="h79-2X-qv5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="4" y="64" width="406" height="672"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNw-8P-0Hc">
@@ -406,15 +406,15 @@ CQkJA
             <objects>
                 <tableViewController id="wy4-8q-Q4S" customClass="MyTableViewController" customModule="Recipe_Shopping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" id="F8z-Io-kqc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="100" id="4Yh-e2-NUU" customClass="RecipeTableViewCell" customModule="Recipe_Shopping" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Yh-e2-NUU" id="g0g-Dg-uPh">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9e-6H-opm">
@@ -466,62 +466,65 @@ CQkJA
                         <viewControllerLayoutGuide type="bottom" id="mJU-QU-sKs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Td4-vM-baL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailbackground" translatesAutoresizingMaskIntoConstraints="NO" id="5ht-oL-gZS">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aYe-yg-ubs">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gV2-3t-TA9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="539"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RHo-Q1-s0e" userLabel="Detailview Scrollview">
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M5S-cE-XGe">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="267"/>
+                                        <rect key="frame" x="20" y="20" width="375" height="267"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="267" id="b87-re-tfh"/>
+                                            <constraint firstAttribute="height" constant="267" id="qcV-70-SPq"/>
                                         </constraints>
                                     </imageView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qz4-Ql-SjF">
-                                        <rect key="frame" x="0.0" y="267" width="375" height="272"/>
+                                        <rect key="frame" x="30" y="287" width="354" height="650"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="650" id="q7x-ok-4FU"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="M5S-cE-XGe" firstAttribute="top" secondItem="RHo-Q1-s0e" secondAttribute="top" constant="20" id="22Y-Ub-9RK"/>
+                                    <constraint firstItem="M5S-cE-XGe" firstAttribute="centerX" secondItem="RHo-Q1-s0e" secondAttribute="centerX" id="ItE-mm-aD1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qz4-Ql-SjF" secondAttribute="bottom" constant="10" id="gtF-mT-FaE"/>
+                                    <constraint firstItem="Qz4-Ql-SjF" firstAttribute="leading" secondItem="RHo-Q1-s0e" secondAttribute="leading" constant="30" id="hzM-CJ-kF7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qz4-Ql-SjF" secondAttribute="trailing" constant="30" id="o7M-sN-anj"/>
+                                    <constraint firstItem="M5S-cE-XGe" firstAttribute="centerX" secondItem="Qz4-Ql-SjF" secondAttribute="centerX" id="udx-KN-KV3"/>
+                                    <constraint firstItem="Qz4-Ql-SjF" firstAttribute="top" secondItem="M5S-cE-XGe" secondAttribute="bottom" id="yxx-E1-Y7M"/>
+                                    <constraint firstItem="M5S-cE-XGe" firstAttribute="leading" secondItem="RHo-Q1-s0e" secondAttribute="leading" constant="20" id="zZS-mb-ulO"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="centerX" secondItem="Td4-vM-baL" secondAttribute="centerX" id="5fs-c5-L6l"/>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="top" secondItem="aYe-yg-ubs" secondAttribute="top" id="9F9-uQ-LnG"/>
-                            <constraint firstItem="5ht-oL-gZS" firstAttribute="trailing" secondItem="gV2-3t-TA9" secondAttribute="trailing" id="FdP-Rr-BAs"/>
-                            <constraint firstItem="5ht-oL-gZS" firstAttribute="top" secondItem="aYe-yg-ubs" secondAttribute="top" id="Ie4-mh-R4D"/>
-                            <constraint firstItem="5ht-oL-gZS" firstAttribute="bottom" secondItem="aYe-yg-ubs" secondAttribute="bottom" id="Jbq-LY-OvN"/>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="top" secondItem="sHd-kI-Ezh" secondAttribute="bottom" id="QPd-M5-idb"/>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="leading" secondItem="aYe-yg-ubs" secondAttribute="leading" id="Qwk-oC-pes"/>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="trailing" secondItem="aYe-yg-ubs" secondAttribute="trailing" id="Ty8-Iy-ehY"/>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="leading" secondItem="Td4-vM-baL" secondAttribute="leading" id="UBO-Eb-4Mn"/>
-                            <constraint firstItem="5ht-oL-gZS" firstAttribute="leading" secondItem="aYe-yg-ubs" secondAttribute="leading" id="XU7-LE-nYt"/>
-                            <constraint firstItem="gV2-3t-TA9" firstAttribute="centerY" secondItem="Td4-vM-baL" secondAttribute="centerY" id="hm9-RL-Uzw"/>
-                            <constraint firstItem="5ht-oL-gZS" firstAttribute="bottom" secondItem="mJU-QU-sKs" secondAttribute="top" id="jDs-H2-56E"/>
+                            <constraint firstItem="5ht-oL-gZS" firstAttribute="top" secondItem="Td4-vM-baL" secondAttribute="top" id="59t-fG-hAK"/>
+                            <constraint firstAttribute="bottom" secondItem="5ht-oL-gZS" secondAttribute="bottom" id="6j7-vh-QB8"/>
+                            <constraint firstAttribute="trailing" secondItem="RHo-Q1-s0e" secondAttribute="trailing" id="L9v-vy-ay1"/>
+                            <constraint firstItem="mJU-QU-sKs" firstAttribute="top" secondItem="RHo-Q1-s0e" secondAttribute="bottom" id="bEw-nP-3hT"/>
+                            <constraint firstItem="RHo-Q1-s0e" firstAttribute="leading" secondItem="Td4-vM-baL" secondAttribute="leading" id="qfF-ld-eNr"/>
+                            <constraint firstAttribute="trailing" secondItem="5ht-oL-gZS" secondAttribute="trailing" id="r6b-7d-zNV"/>
+                            <constraint firstItem="5ht-oL-gZS" firstAttribute="leading" secondItem="Td4-vM-baL" secondAttribute="leading" id="sd7-EW-goG"/>
+                            <constraint firstItem="RHo-Q1-s0e" firstAttribute="top" secondItem="sHd-kI-Ezh" secondAttribute="bottom" id="y6E-oW-NuG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="RecipeDescription" destination="Qz4-Ql-SjF" id="XLl-W2-K83"/>
                         <outlet property="RecipeImage" destination="M5S-cE-XGe" id="iQr-3K-44p"/>
-                        <outlet property="scrollContainer" destination="aYe-yg-ubs" id="Q96-jd-T6a"/>
+                        <outlet property="detailviewscrollview" destination="RHo-Q1-s0e" id="273-bB-cOS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgX-4X-hlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1773.5999999999999" y="859.52023988005999"/>
+            <point key="canvasLocation" x="1772.4637681159422" y="859.23913043478262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="i2S-5S-Nyx">
