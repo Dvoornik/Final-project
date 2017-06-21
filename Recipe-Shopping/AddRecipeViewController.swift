@@ -148,11 +148,11 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         let substring = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-        searchAutocompleteEntriesWithSubstring(substring)
+        searchAutocomplete(substring)
         return true
     }
     // Finds any matching string in the array and returns that to the tableview.
-    func searchAutocompleteEntriesWithSubstring(_ substring: String)
+    func searchAutocomplete(_ substring: String)
     {
         autocompleteResults.removeAll(keepingCapacity: false)
         for key in autocompleteList
