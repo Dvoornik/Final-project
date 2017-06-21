@@ -5,6 +5,13 @@
 //  Created by Sergey on 5/31/17.
 //  Copyright © 2017 DeAnza. All rights reserved.
 //
+//  CIS55 Final Project Team 3:
+//  Sergey Chertilin
+//  Rose Lee
+//  Connie Lun
+//  Alena Marchuk
+//  Steve Tu
+
 
 import UIKit
 
