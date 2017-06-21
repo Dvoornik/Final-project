@@ -37,6 +37,8 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
     var searchController : UISearchController!
     var fetchResultsController : NSFetchedResultsController<IngredientMO>!
     
+    var presetIngredientLibrary = ["Apple","Apricot","Almond","Biscuit","Banana","Bacon","Cabbage","Capers","Caviar","Dill","Duck","Danish","Egg","Jam","Jelly","Kale","Kiwi","Kidney beans","Lamb","Leek","Lemon","Mango","Mint","Taco","Tofu","Tea","Wasabi","White pepper","Whiskey"]
+    
     func update_table() {
         
         
@@ -138,7 +140,7 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
     {
         
         super.viewDidLoad()
-        
+        loadPresetData()
         //self.tableView.backgroundColor = UIColor.black
         
         self.title = "Ingredients"
@@ -752,5 +754,36 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
     @IBAction func Cancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func loadPresetData() {
+        
+        var addItem : IngredientMO!
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+            let request: NSFetchRequest<IngredientMO> = IngredientMO.fetchRequest()
+            let context = appDelegate.persistentContainer.viewContext
+            do {
+                Ingredient = try context.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        if Ingredient.count == 0 {
+            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                if Ingredient.count == 0 {
+                    
+                    for i in 0...presetIngredientLibrary.count - 1 {
+                        addItem = IngredientMO(context: appDelegate.persistentContainer.viewContext)
+                        addItem.ingname = presetIngredientLibrary[i]
+                        appDelegate.saveContext()
+                    }
+                }
+                
+            }
+        }
+    }
+
 }
 
