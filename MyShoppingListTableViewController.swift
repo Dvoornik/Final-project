@@ -31,7 +31,7 @@ class MyShoppingListTableViewController: UITableViewController, NSFetchedResults
         
         self.navigationItem.title =  self.MyShopList
         
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "< ShoppingList", style: .plain, target: self, action: #selector(backAction))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(backAction))
         
         // self.navigationItem.leftBarButtonItem?.title = "ShoppingList"
         // self.navigationItem.leftBarButtonItem?.action = #selector(backAction)

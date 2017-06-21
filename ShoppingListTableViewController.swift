@@ -27,8 +27,10 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        self.navigationItem.title = self.HeadTitle
-        
+        // self.navigationItem.title = self.HeadTitle
+        self.navigationItem.title = "Shopping List"
+        self.navigationItem.hidesBackButton = true
+
         let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "iSLname", ascending: true)
         //fetchRequest.predicate = NSPredicate(format: "iType == %@", self.HeadTitle)
