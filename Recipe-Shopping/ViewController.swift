@@ -22,9 +22,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.white
         // Do any additional setup after loading the view, typically from a nib.
         
         appName.text = "DISHBOOK"
+        appName.layer.shadowColor = UIColor.black.cgColor
+        appName.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        appName.layer.shadowOpacity = 1.0
+        appName.layer.shadowRadius = 2.0
+        appName.layer.backgroundColor = UIColor.clear.cgColor
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
         
         self.bulgogiBtn.alpha = 0
@@ -56,6 +65,8 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         // Hide the navigation bar for current view controller
         self.navigationController?.isNavigationBarHidden = true;
+        tabBarController?.tabBar.barTintColor = UIColor.black
+        tabBarController?.tabBar.tintColor = UIColor.white
     }
     
     override func viewWillDisappear(_ animated: Bool) {

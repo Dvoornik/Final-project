@@ -180,6 +180,8 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
         super.viewWillAppear(animated)
         
         //Add background view to the table view
+        tabBarController?.tabBar.barTintColor = UIColor.white
+        tabBarController?.tabBar.tintColor = UIColor.black
         let backgroundImage : UIImage = UIImage(named: "whiteboard.jpeg")!
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView

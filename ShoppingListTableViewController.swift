@@ -59,6 +59,8 @@ class ShoppingListTableViewController: UITableViewController, NSFetchedResultsCo
         super.viewWillAppear(animated)
         
         //Add background view to the table view
+        tabBarController?.tabBar.barTintColor = UIColor.white
+        tabBarController?.tabBar.tintColor = UIColor.black
         let backgroundImage : UIImage = UIImage(named: "groconwhiteboard.jpeg")!
         let imageView = UIImageView(image: backgroundImage)
         self.tableView.backgroundView = imageView

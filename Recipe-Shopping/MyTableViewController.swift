@@ -51,6 +51,12 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
         super.viewDidLoad()
         loadPresetData()
         
+        //navigationController?.navigationBar.barTintColor = UIColor.black
+        //navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        tabBarController?.tabBar.barTintColor = UIColor.white
+        tabBarController?.tabBar.tintColor = UIColor.black
+
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -106,6 +112,8 @@ class MyTableViewController: UITableViewController, UISearchResultsUpdating, NSF
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        tabBarController?.tabBar.barTintColor = UIColor.white
+        tabBarController?.tabBar.tintColor = UIColor.black
         //Add background view to the table view
         let backgroundImage : UIImage = UIImage(named: "tablesample.png")!
         let imageView = UIImageView(image: backgroundImage)
