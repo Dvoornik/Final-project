@@ -17,12 +17,12 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var previewImageError: UILabel!
     @IBOutlet weak var autocompleteTableView: UITableView!
-
+    @IBOutlet weak var Recipe: UITextView!
     
     //////////// Declared Variables ////////////
     var newItem : DishDO!
     var TypeOfRecipe : String!
-    var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icereamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
+    var autocompleteList : [String] = ["antipasto", "blinzy", "bruschetta", "bruschettafunghi", "bulgogi", "caipirinha", "capreze", "cheesecake", "cheeseplatter", "cherrydaiquiri", "cherrypie", "chocolateicecream", "cinnaparts", "cocktail", "currentspie", "daiquiri", "foilcherrypie", "fruitcheeseboard", "greekmezze", "greenteaicecream", "icecream", "icereamassortment", "icedtea", "iris", "lemonade", "maindish", "meatpie", "metropolitancocktail", "pasta", "peachpie", "pineappleicecream", "placeholder", "pomegrandeliqueur", "pomegrandemojito", "prunepie", "raspberrypie", "redvelvet", "roastedchicken", "salad", "seafoodpasta", "taco", "tea", "tortillasoup"]
     var autocompleteResults : [String] = []
     //var recipeSteps : String = ""
     
@@ -123,7 +123,7 @@ class AddRecipeViewController: UIViewController, UITextFieldDelegate, UITableVie
             }
             newItem.iName = Name.text!
             // saveContext should also save the recipe steps if you already added them. -S.T.
-            //newItem.iDescription = recipeSteps
+            newItem.iDescription = Recipe.text!
             appDelegate.saveContext()
         }
         self.dismiss(animated: true, completion: nil)
