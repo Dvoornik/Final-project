@@ -176,6 +176,22 @@ class IngredientsTableViewController: UITableViewController, UISearchResultsUpda
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //Add background view to the table view
+        let backgroundImage : UIImage = UIImage(named: "whiteboard.jpeg")!
+        let imageView = UIImageView(image: backgroundImage)
+        self.tableView.backgroundView = imageView
+        
+        //Gets rid of empty extra cells at the end of TV
+        tableView.tableFooterView = UIView(frame: .zero)
+        
+        //fill the view with the image; or use .scaleAspectFit to fit the image to the view (will leave white spaces though)
+        imageView.contentMode = .scaleAspectFill
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
